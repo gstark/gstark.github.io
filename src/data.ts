@@ -70,6 +70,12 @@ export const featured: Project[] = [
 
 export const more: Project[] = [
   {
+    name: 'gsde',
+    repo: 'gsde',
+    language: 'Swift',
+    description: "Gavin's Swanky Dev Environment. An ongoing attempt to build my favorite and preferred dev environment.",
+  },
+  {
     name: 'homebrew-easy-install',
     repo: 'homebrew-easy-install',
     language: 'Swift',
