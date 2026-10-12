@@ -53,11 +53,11 @@ export const featured: Project[] = [
       'Benchmarks your system DNS against 125 public resolvers and ranks them by reliability, then latency. Native on macOS and Linux. Never changes your settings.',
   },
   {
-    name: 'agm',
+    name: 'agent-manager',
     repo: 'agent-manager',
     language: 'Go',
     description:
-      'Package manager for AI agent skills, rules, and policies. Curate once, then install the right set into any Claude Code or Codex project.',
+      'The agm CLI, a package manager for AI agent skills, rules, and policies. Curate once, then install the right set into any Claude Code or Codex project.',
   },
   {
     name: 'Perch',
@@ -69,6 +69,12 @@ export const featured: Project[] = [
 ]
 
 export const more: Project[] = [
+  {
+    name: 'bambu3mf',
+    repo: 'bambu3mf',
+    language: 'Python',
+    description: 'Python library for creating Bambu Studio compatible 3MF project files with multi-plate layouts and preset configuration.',
+  },
   {
     name: 'gsde',
     repo: 'gsde',
