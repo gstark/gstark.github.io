@@ -70,6 +70,24 @@ export const featured: Project[] = [
 
 export const more: Project[] = [
   {
+    name: 'darwin-photos',
+    repo: 'darwin-photos',
+    language: 'Go',
+    description: 'Back up iCloud Photos to external storage without bloating your Mac. A fork of cleanexit0/darwin-photos.',
+  },
+  {
+    name: 'ts-to-zod',
+    repo: 'ts-to-zod',
+    language: 'Ruby',
+    description: 'Ruby gem that converts TypeScript type definitions to Zod validation schemas.',
+  },
+  {
+    name: 'swagger-typescript-api',
+    repo: 'swagger-typescript-api',
+    language: 'Ruby',
+    description: 'Ruby gem that generates TypeScript type definitions from OpenAPI 3.0 and 3.1 specifications.',
+  },
+  {
     name: 'bambu3mf',
     repo: 'bambu3mf',
     language: 'Python',
