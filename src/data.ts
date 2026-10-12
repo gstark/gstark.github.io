@@ -16,8 +16,8 @@ const github = (repo: string) => `https://github.com/gstark/${repo}`
 
 export const profile = {
   name: 'Gavin Stark',
-  tagline:
-    'I am a software developer with over 30 years of development experience. I build developer tools, Ruby infrastructure, and small native apps. Former instructor at Suncoast Developers Guild and The Iron Yard.',
+  tagline: 'Software developer since 1992, working across Ruby, systems, and the web.',
+  bio: 'For 15 years I designed and ran the Ruby on Rails platform behind the NEOCAST digital signage network, carrying it from Rails 0.9 to 6.1 while it grew to millions of requests and background jobs a day. I also built the custom Ubuntu based operating system that boots thousands of its devices on Intel and ARM hardware, down to kernel and driver patches. Before web work I wrote C and C++ for PBX networks and for launch vehicle tracking at Honeywell Space Systems. I taught full stack courses at The Iron Yard and Suncoast Developers Guild, have organized the Tampa Ruby Brigade since 2006, and have patches in Ruby, Rake, JRuby, and GStreamer.',
   github: 'https://github.com/gstark',
   email: 'floaty.malice_1t@icloud.com',
   resume: 'https://resume.gstark.com',

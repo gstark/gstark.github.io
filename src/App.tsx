@@ -9,6 +9,7 @@ export default function App() {
         <div className="space-y-4">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{profile.name}</h1>
           <p className="max-w-xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">{profile.tagline}</p>
+          <p className="max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-400">{profile.bio}</p>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <a href={profile.github} className="text-accent hover:underline">GitHub</a>
             <a href={`mailto:${profile.email}`} className="text-accent hover:underline">Email</a>
