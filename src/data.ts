@@ -70,6 +70,24 @@ export const featured: Project[] = [
 
 export const more: Project[] = [
   {
+    name: 'handbook',
+    repo: 'handbook',
+    language: 'Markdown',
+    description: 'A guide for students of the Suncoast Developers Guild. A fork of suncoast-devs/handbook.',
+  },
+  {
+    name: 'sdg',
+    repo: 'sdg',
+    language: 'Ruby',
+    description: 'Rails application for managing Suncoast Developers Guild cohorts and students.',
+  },
+  {
+    name: 'piet-tic-tac-toe',
+    repo: 'piet-tic-tac-toe',
+    language: 'Piet',
+    description: 'Tic-tac-toe written in Piet, the esoteric language whose programs are images.',
+  },
+  {
     name: 'darwin-photos',
     repo: 'darwin-photos',
     language: 'Go',
