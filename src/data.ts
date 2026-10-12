@@ -20,7 +20,7 @@ export const profile = {
     'I am a software developer with over 30 years of development experience. I build developer tools, Ruby infrastructure, and small native apps. Former instructor at Suncoast Developers Guild and The Iron Yard.',
   github: 'https://github.com/gstark',
   email: 'floaty.malice_1t@icloud.com',
-  resume: github('resume'),
+  resume: 'https://resume.gstark.com',
 }
 
 export const featured: Project[] = [
