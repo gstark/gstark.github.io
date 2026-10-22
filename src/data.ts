@@ -1,9 +1,13 @@
+import { Bird, Bot, Gauge, ListChecks, Route, Stamp, type LucideIcon } from 'lucide-react'
+
 export type Project = {
   name: string
   repo: string
   language: string
   description: string
 }
+
+export type FeaturedProject = Project & { icon: LucideIcon }
 
 export type Talk = {
   title: string
@@ -23,10 +27,11 @@ export const profile = {
   resume: 'https://resume.gstark.com',
 }
 
-export const featured: Project[] = [
+export const featured: FeaturedProject[] = [
   {
     name: 'decent_job',
     repo: 'decent_job',
+    icon: ListChecks,
     language: 'Ruby',
     description:
       'PostgreSQL job runner with its own job API, an optional Active Job adapter, and a dependency-free dashboard. The only runtime dependency is pg.',
@@ -34,6 +39,7 @@ export const featured: Project[] = [
   {
     name: 'Raxon',
     repo: 'raxon-public',
+    icon: Route,
     language: 'Ruby',
     description:
       'Rack 3 JSON API framework with file-based routing, automatic OpenAPI generation, and request and response validation.',
@@ -41,6 +47,7 @@ export const featured: Project[] = [
   {
     name: 'Sigil',
     repo: 'sigil',
+    icon: Stamp,
     language: 'Rust',
     description:
       'A programming language designed to be written by a language model and verified by a machine. Types, capabilities, and contracts live in the signature.',
@@ -48,6 +55,7 @@ export const featured: Project[] = [
   {
     name: 'whichdns',
     repo: 'whichdns',
+    icon: Gauge,
     language: 'Zig',
     description:
       'Benchmarks your system DNS against 125 public resolvers and ranks them by reliability, then latency. Native on macOS and Linux. Never changes your settings.',
@@ -55,6 +63,7 @@ export const featured: Project[] = [
   {
     name: 'agent-manager',
     repo: 'agent-manager',
+    icon: Bot,
     language: 'Go',
     description:
       'The agm CLI, a package manager for AI agent skills, rules, and policies. Curate once, then install the right set into any Claude Code or Codex project.',
@@ -62,6 +71,7 @@ export const featured: Project[] = [
   {
     name: 'Perch',
     repo: 'perch',
+    icon: Bird,
     language: 'Swift',
     description:
       'Personal macOS menu bar app: fuzzy launcher, clipboard history, inline calculator, window management, CPU meters, and an unpushed-commits warning. A fork of Tinycast.',
