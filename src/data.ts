@@ -1,4 +1,5 @@
-import { Archive, Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Printer, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
+import { Archive, Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Printer, Route, SquareTerminal, Stamp, Waypoints, type LucideIcon } from 'lucide-react'
+import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
 import { decentJob } from './projects/decent-job.ts'
@@ -180,6 +181,16 @@ export const featured: FeaturedProject[] = [
       'Python library that writes Bambu Studio project files: printer and filament presets, multi-color parts, and several plates, ready to slice.',
   },
   {
+    name: 'a_star',
+    repo: 'a_star',
+    slug: 'a_star',
+    page: aStar,
+    icon: Waypoints,
+    language: 'Ruby',
+    description:
+      'A* path search as a Ruby gem, driven by procs for the goal, neighbors, weight, and heuristic. Extracted from my Advent of Code solutions.',
+  },
+  {
     name: 'Network status filters',
     repo: 'chrome-devtools-network-status-filters',
     slug: 'network-status-filters',
@@ -239,12 +250,6 @@ export const more: Project[] = [
     repo: 'tic-tac-toe',
     language: 'C',
     description: 'Unbeatable tic-tac-toe. Minimax with a precomputed move cache, in Ruby, C, and Piet.',
-  },
-  {
-    name: 'a_star',
-    repo: 'a_star',
-    language: 'Ruby',
-    description: 'A* path search as a gem, extracted from Advent of Code solutions.',
   },
   {
     name: 'advent-of-code',
