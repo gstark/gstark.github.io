@@ -18,6 +18,29 @@ export const networkStatusFilters: ProjectPageContent = {
 >=500            a comparison: <, <=, >, >=, !=
 401, 403, >=500  any of these`,
   },
+  media: [
+    {
+      kind: 'image',
+      src: '/media/network-status-filters/after-all.webp',
+      alt: 'The Network panel with the patch: after the resource type buttons, a second row has All, 2xx, 3xx, 4xx, 5xx, and Custom. All 10 requests show.',
+      width: 1300,
+      height: 440,
+    },
+    {
+      kind: 'image',
+      src: '/media/network-status-filters/after-4xx-5xx.webp',
+      alt: '4xx and 5xx are selected. The panel shows 4 of 10 requests: 404, 418, 500, and 503.',
+      width: 1300,
+      height: 440,
+    },
+    {
+      kind: 'image',
+      src: '/media/network-status-filters/after-custom.webp',
+      alt: 'The Custom button shows "200-204, 418". The panel shows 5 of 10 requests: the page and 200, 201, 204, and 418.',
+      width: 1300,
+      height: 440,
+    },
+  ],
   features: [
     {
       title: 'Status class buttons',

@@ -2,14 +2,14 @@ import type { Media } from '../data'
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-// The first item spans the full width. The rest sit two to a row.
+// The first item and wide panels span the full width. The rest sit two to a row.
 export function MediaGallery({ media }: { media: Media[] }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {media.map((item, index) => (
         <figure
           key={item.src}
-          className={`overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 ${index === 0 ? 'sm:col-span-2' : ''}`}
+          className={`overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 ${index === 0 || item.width > item.height * 2 ? 'sm:col-span-2' : ''}`}
         >
           <MediaItem item={item} />
           <figcaption className="sr-only">{item.alt}</figcaption>

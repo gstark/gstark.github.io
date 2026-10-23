@@ -19,7 +19,8 @@ export type Project = {
 export type CodeSample = { file: string; code: string }
 
 // Features with a group render under that group's heading. prs are pull request numbers in the project's repo.
-export type Feature = { title: string; body: string; group?: string; prs?: number[] }
+// video is the path of an mp4 that shows the feature.
+export type Feature = { title: string; body: string; group?: string; prs?: number[]; video?: string }
 
 // src is a path under public/media. Videos are short, muted loops.
 export type Media =

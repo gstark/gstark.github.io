@@ -1,4 +1,5 @@
-import { ArrowLeft, ArrowRight, Info } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Info, Play, X } from 'lucide-react'
+import { useRef, useState } from 'react'
 import { siGithub } from 'simple-icons'
 import { featured, projectPath, repoUrl, type Feature, type FeaturedProject } from '../data'
 import { CopyButton } from './CopyButton'
@@ -132,9 +133,10 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
                     <p className="mt-1.5 text-sm leading-relaxed text-pretty text-neutral-600 dark:text-neutral-400">
                       <Inline text={feature.body} />
                     </p>
-                    {feature.prs && (
-                      <p className="mt-2 flex flex-wrap gap-2 font-mono text-xs">
-                        {feature.prs.map((pr) => (
+                    {(feature.prs || feature.video) && (
+                      <p className="mt-2 flex flex-wrap items-center gap-2 font-mono text-xs">
+                        {feature.video && <WatchVideo title={feature.title} src={feature.video} />}
+                        {feature.prs?.map((pr) => (
                           <a key={pr} href={`${repoUrl(project.repo)}/pull/${pr}`} className="text-neutral-500 hover:text-accent">
                             #{pr}
                           </a>
@@ -180,6 +182,48 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
         </div>
       </footer>
     </div>
+  )
+}
+
+// A "Watch" link that plays the feature's video in a modal dialog. The video
+// loads only when the dialog opens.
+function WatchVideo({ title, src }: { title: string; src: string }) {
+  const dialog = useRef<HTMLDialogElement>(null)
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          setOpen(true)
+          dialog.current?.showModal()
+        }}
+        className="flex cursor-pointer items-center gap-1 text-accent hover:underline"
+      >
+        <Play className="size-3" aria-hidden />
+        Watch
+      </button>
+      <dialog
+        ref={dialog}
+        aria-label={title}
+        onClose={() => setOpen(false)}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) dialog.current?.close()
+        }}
+        className="m-auto max-w-[92vw] overflow-visible bg-transparent backdrop:bg-black/80"
+      >
+        <button
+          type="button"
+          onClick={() => dialog.current?.close()}
+          aria-label="Close"
+          className="absolute -top-9 right-0 cursor-pointer text-white/80 hover:text-white"
+        >
+          <X className="size-6" aria-hidden />
+        </button>
+        {open && <video src={src} controls autoPlay playsInline className="block max-h-[85vh] max-w-full rounded-xl" />}
+      </dialog>
+    </>
   )
 }
 
