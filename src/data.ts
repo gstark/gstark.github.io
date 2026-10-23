@@ -1,5 +1,6 @@
-import { Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
+import { Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Printer, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
 import { agentManager } from './projects/agent-manager.ts'
+import { bambu3mf } from './projects/bambu3mf.ts'
 import { decentJob } from './projects/decent-job.ts'
 import { networkStatusFilters } from './projects/network-status-filters.ts'
 import { perch } from './projects/perch.ts'
@@ -158,6 +159,16 @@ export const featured: FeaturedProject[] = [
       'Backs up a Gmail mailbox to your own S3 bucket every 5 minutes, then searches it in plain English from a macOS menu bar app.',
   },
   {
+    name: 'bambu3mf',
+    repo: 'bambu3mf',
+    slug: 'bambu3mf',
+    page: bambu3mf,
+    icon: Printer,
+    language: 'Python',
+    description:
+      'Python library that writes Bambu Studio project files: printer and filament presets, multi-color parts, and several plates, ready to slice.',
+  },
+  {
     name: 'Network status filters',
     repo: 'chrome-devtools-network-status-filters',
     slug: 'network-status-filters',
@@ -205,12 +216,6 @@ export const more: Project[] = [
     repo: 'swagger-typescript-api',
     language: 'Ruby',
     description: 'Ruby gem that generates TypeScript type definitions from OpenAPI 3.0 and 3.1 specifications.',
-  },
-  {
-    name: 'bambu3mf',
-    repo: 'bambu3mf',
-    language: 'Python',
-    description: 'Python library for creating Bambu Studio compatible 3MF project files with multi-plate layouts and preset configuration.',
   },
   {
     name: 'gsde',
