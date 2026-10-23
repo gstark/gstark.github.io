@@ -54,12 +54,23 @@ export type Talk = {
   year?: number
 }
 
+export type BioSegment = string | { text: string; href: string }
+
 const github = (repo: string) => `https://github.com/gstark/${repo}`
 
 export const profile = {
   name: 'Gavin Stark',
   tagline: 'Software developer since 1992, working across Ruby, systems, and the web.',
-  bio: 'For 15 years I designed and ran the Ruby on Rails platform behind the NEOCAST digital signage network, carrying it from Rails 0.9 to 7 while it grew to millions of requests and background jobs a day. I also built the custom Ubuntu based operating system that boots thousands of its devices on Intel and ARM hardware, down to kernel and driver patches. Before web work I wrote C and C++ for PBX networks and for launch vehicle tracking at Honeywell Space Systems. I taught full stack courses at The Iron Yard and Suncoast Developers Guild, have organized the Tampa Ruby Brigade since 2006, and have patches in Ruby, Rake, JRuby, and GStreamer.',
+  bio: [
+    ['These days I build software and AI agents for small and midsize companies, mostly in Ruby and React. Most of my clients don’t have a full engineering team, so I become one: requirements, code, infrastructure, deployment, and support. When something breaks in production, I’m the one who figures out why.'],
+    [
+      'I’ve been writing software since 1992. For fifteen years I was the engineer behind NEOCAST’s digital signage network: I built the Rails platform that served millions of requests a day, and the custom Linux that booted thousands of screens on Intel and ARM hardware. Before that I wrote C and C++ for phone networks and ',
+      { text: 'launch-vehicle tracking at Honeywell Space Systems', href: 'https://en.wikipedia.org/wiki/BMRST' },
+      '.',
+    ],
+    ['I’ve also taught full-stack development, run the Tampa Ruby Brigade since 2006, and contributed patches to Ruby, Rake, JRuby, and GStreamer.'],
+    ['On my own time, I build the software I always wished existed but never had the time or patience to write. With AI coding tools, I can now start from scratch or take an open source project and reshape it to fit how I work. A few of those projects are below.'],
+  ] satisfies BioSegment[][],
   github: 'https://github.com/gstark',
   email: 'floaty.malice_1t@icloud.com',
   resume: 'https://resume.gstark.com',
