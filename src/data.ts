@@ -1,4 +1,4 @@
-import { Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Printer, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
+import { Archive, Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Printer, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
 import { decentJob } from './projects/decent-job.ts'
@@ -6,6 +6,7 @@ import { networkStatusFilters } from './projects/network-status-filters.ts'
 import { perch } from './projects/perch.ts'
 import { raxon } from './projects/raxon.ts'
 import { riffle } from './projects/riffle.ts'
+import { shoebox } from './projects/shoebox.ts'
 import { sigil } from './projects/sigil.ts'
 import { t3code } from './projects/t3code.ts'
 import { whichdns } from './projects/whichdns.ts'
@@ -159,6 +160,16 @@ export const featured: FeaturedProject[] = [
       'Backs up a Gmail mailbox to your own S3 bucket every 5 minutes, then searches it in plain English from a macOS menu bar app.',
   },
   {
+    name: 'Shoebox',
+    repo: 'shoebox',
+    slug: 'shoebox',
+    page: shoebox,
+    icon: Archive,
+    language: 'Swift',
+    description:
+      'macOS menu bar app and CLI that back up iCloud Photos to a drive or S3, including originals that are only in iCloud. A Swift rewrite of darwin-photos.',
+  },
+  {
     name: 'bambu3mf',
     repo: 'bambu3mf',
     slug: 'bambu3mf',
@@ -198,12 +209,6 @@ export const more: Project[] = [
     repo: 'piet-tic-tac-toe',
     language: 'Piet',
     description: 'Tic-tac-toe written in Piet, the esoteric language whose programs are images.',
-  },
-  {
-    name: 'darwin-photos',
-    repo: 'darwin-photos',
-    language: 'Go',
-    description: 'Back up iCloud Photos to external storage without bloating your Mac. A fork of cleanexit0/darwin-photos.',
   },
   {
     name: 'ts-to-zod',
