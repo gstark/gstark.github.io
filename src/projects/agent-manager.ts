@@ -10,6 +10,16 @@ export const agentManager: ProjectPageContent = {
   note: 'A personal project, built for my own Claude Code and Codex setup.',
   license: 'MIT',
   install: 'brew install gstark/tap/agm',
+  media: [
+    {
+      kind: 'video',
+      src: '/media/agent-manager/install.mp4',
+      poster: '/media/agent-manager/install.webp',
+      alt: 'agm lists the skills in the library, adds the ruby pack and the tdd skill to a project, installs them, and shows the files it wrote under .claude, .agents, and .agm.',
+      width: 1200,
+      height: 640,
+    },
+  ],
   example: {
     file: '.agent-manager.toml',
     code: `skills = ["tdd", "debugging"]

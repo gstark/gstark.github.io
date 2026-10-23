@@ -11,6 +11,29 @@ export const perch: ProjectPageContent = {
   license: 'AGPL-3.0',
   install: 'git clone https://github.com/gstark/perch.git && cd perch && just install',
   upstream: { name: 'Tinycast', url: 'https://github.com/abue-ammar/tinycast' },
+  media: [
+    {
+      kind: 'image',
+      src: '/media/perch/launcher.webp',
+      alt: 'The Perch palette with the query "saf". Safari is the first result, with Open Application on Return and Actions on Command-K.',
+      width: 1800,
+      height: 1140,
+    },
+    {
+      kind: 'image',
+      src: '/media/perch/calculator.webp',
+      alt: 'The palette converts "12.5 km in miles" inline: 12.5 kilometers is 7.767139903 miles.',
+      width: 1800,
+      height: 1140,
+    },
+    {
+      kind: 'image',
+      src: '/media/perch/emoji.webp',
+      alt: 'The emoji picker with the query "rocket". The rocket emoji is selected, followed by astronauts and matching symbols.',
+      width: 1800,
+      height: 1140,
+    },
+  ],
   features: [
     {
       title: 'Launcher and hotkeys',

@@ -22,6 +22,16 @@ fn Ledger.debit(ledger: Ledger, account: Account, amount: Int) -> Ledger
   ledger with { balances: Map.insert(ledger.balances, account.id, ledger.balance(account.id) - amount) }
 }`,
   },
+  media: [
+    {
+      kind: 'video',
+      src: '/media/sigil/test.mp4',
+      poster: '/media/sigil/counterexample.webp',
+      alt: 'sigil test finds that discount(4, 13) breaks the ensures clause. After the fix it finds an overflow in price * percent. After a bound on price, all 100 cases pass.',
+      width: 1400,
+      height: 500,
+    },
+  ],
   features: [
     {
       title: 'Contracts are the tests',

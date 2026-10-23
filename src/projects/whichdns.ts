@@ -10,6 +10,16 @@ export const whichdns: ProjectPageContent = {
   note: 'A personal project with no packaged release yet. You build it with Zig 0.16. Zig 0.17 cannot build this version.',
   license: 'MIT',
   install: 'zig build -Doptimize=ReleaseSmall',
+  media: [
+    {
+      kind: 'video',
+      src: '/media/whichdns/run.mp4',
+      poster: '/media/whichdns/report.webp',
+      alt: 'whichdns validates 125 public resolvers with a live progress bar, then prints the 12 fastest reliable ones, with NTT first at 22 ms.',
+      width: 1440,
+      height: 580,
+    },
+  ],
   example: {
     file: 'terminal',
     code: `whichdns --top 10                    # system and public resolvers, best 10

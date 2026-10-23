@@ -3,6 +3,7 @@ import { siGithub } from 'simple-icons'
 import { featured, projectPath, repoUrl, type Feature, type FeaturedProject } from '../data'
 import { CopyButton } from './CopyButton'
 import { LanguageLogo } from './LanguageLogo'
+import { MediaGallery } from './MediaGallery'
 import { ThemeToggle } from './ThemeToggle'
 
 export function ProjectPage({ project }: { project: FeaturedProject }) {
@@ -74,6 +75,13 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
           </Fact>
         </dl>
       </section>
+
+      {page.media && (
+        <section className="mt-16">
+          <SectionHeading>Screenshots</SectionHeading>
+          <MediaGallery media={page.media} />
+        </section>
+      )}
 
       {page.example && (
         <section className="mt-16">

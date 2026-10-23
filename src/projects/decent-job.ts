@@ -25,6 +25,29 @@ end
 GreetingJob.perform_later("Ada")
 GreetingJob.set(queue: "mailers", priority: -10, wait: 60).perform_later("Grace")`,
   },
+  media: [
+    {
+      kind: 'image',
+      src: '/media/decent_job/overview.webp',
+      alt: 'The dashboard overview: counts of queued, scheduled, retrying, running, succeeded, and discarded jobs, a table of queues, the worker list, and a grid of jobs due in the next hour.',
+      width: 2560,
+      height: 1600,
+    },
+    {
+      kind: 'image',
+      src: '/media/decent_job/jobs.webp',
+      alt: 'The jobs page: search and filters, bulk actions, and a list of retrying jobs with their queue, attempts, and last error.',
+      width: 2560,
+      height: 1600,
+    },
+    {
+      kind: 'image',
+      src: '/media/decent_job/performance.webp',
+      alt: 'The performance page: queue wait, run time, and total latency, a log-scale run time histogram, and breakdowns by job class and queue.',
+      width: 2560,
+      height: 1600,
+    },
+  ],
   features: [
     {
       title: 'One dependency',
