@@ -1,11 +1,11 @@
 import { LanguageLogo } from './LanguageLogo'
-import { repoUrl, type FeaturedProject, type Project } from '../data'
+import { projectPath, repoUrl, type FeaturedProject, type Project } from '../data'
 
 export function ProjectCard({ project }: { project: FeaturedProject }) {
   const Icon = project.icon
   return (
     <a
-      href={repoUrl(project.repo)}
+      href={projectPath(project.slug)}
       className="group flex flex-col gap-3 rounded-xl border border-neutral-200 px-6 pt-7 pb-6 transition-colors hover:border-accent/60 dark:border-neutral-800 dark:hover:border-accent/60"
     >
       <div className="blueprint mb-2 flex size-23 items-center justify-center rounded-3xl text-white">

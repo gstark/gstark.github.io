@@ -1,4 +1,4 @@
-import { siGo, siRuby, siRust, siSwift, siZig, type SimpleIcon } from 'simple-icons'
+import { siGo, siRuby, siRust, siSwift, siTypescript, siZig, type SimpleIcon } from 'simple-icons'
 
 // Rust's official mark is black, so it follows the text color to stay visible in dark mode.
 const logos: Record<string, { icon: SimpleIcon; color?: string }> = {
@@ -7,6 +7,7 @@ const logos: Record<string, { icon: SimpleIcon; color?: string }> = {
   Zig: { icon: siZig, color: `#${siZig.hex}` },
   Go: { icon: siGo, color: `#${siGo.hex}` },
   Swift: { icon: siSwift, color: `#${siSwift.hex}` },
+  TypeScript: { icon: siTypescript, color: `#${siTypescript.hex}` },
 }
 
 export function LanguageLogo({ language }: { language: string }) {

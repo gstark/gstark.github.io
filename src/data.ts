@@ -1,4 +1,12 @@
-import { Bird, Bot, Gauge, ListChecks, Route, Stamp, type LucideIcon } from 'lucide-react'
+import { Bird, Bot, Gauge, ListChecks, MailSearch, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
+import { agentManager } from './projects/agent-manager.ts'
+import { decentJob } from './projects/decent-job.ts'
+import { perch } from './projects/perch.ts'
+import { raxon } from './projects/raxon.ts'
+import { riffle } from './projects/riffle.ts'
+import { sigil } from './projects/sigil.ts'
+import { t3code } from './projects/t3code.ts'
+import { whichdns } from './projects/whichdns.ts'
 
 export type Project = {
   name: string
@@ -7,7 +15,25 @@ export type Project = {
   description: string
 }
 
-export type FeaturedProject = Project & { icon: LucideIcon }
+export type CodeSample = { file: string; code: string }
+
+// Features with a group render under that group's heading. prs are pull request numbers in the project's repo.
+export type Feature = { title: string; body: string; group?: string; prs?: number[] }
+
+export type ProjectPageContent = {
+  tagline: string
+  summary: string[]
+  note: string
+  status: string
+  license: string
+  install: string
+  upstream?: { name: string; url: string }
+  example?: CodeSample
+  features: Feature[]
+  steps: { title: string; body?: string; code?: string; file?: string }[]
+}
+
+export type FeaturedProject = Project & { slug: string; icon: LucideIcon; page: ProjectPageContent }
 
 export type Talk = {
   title: string
@@ -31,6 +57,8 @@ export const featured: FeaturedProject[] = [
   {
     name: 'decent_job',
     repo: 'decent_job',
+    slug: 'decent_job',
+    page: decentJob,
     icon: ListChecks,
     language: 'Ruby',
     description:
@@ -39,6 +67,8 @@ export const featured: FeaturedProject[] = [
   {
     name: 'Raxon',
     repo: 'raxon-public',
+    slug: 'raxon',
+    page: raxon,
     icon: Route,
     language: 'Ruby',
     description:
@@ -47,6 +77,8 @@ export const featured: FeaturedProject[] = [
   {
     name: 'Sigil',
     repo: 'sigil',
+    slug: 'sigil',
+    page: sigil,
     icon: Stamp,
     language: 'Rust',
     description:
@@ -55,6 +87,8 @@ export const featured: FeaturedProject[] = [
   {
     name: 'whichdns',
     repo: 'whichdns',
+    slug: 'whichdns',
+    page: whichdns,
     icon: Gauge,
     language: 'Zig',
     description:
@@ -63,6 +97,8 @@ export const featured: FeaturedProject[] = [
   {
     name: 'agent-manager',
     repo: 'agent-manager',
+    slug: 'agent-manager',
+    page: agentManager,
     icon: Bot,
     language: 'Go',
     description:
@@ -71,10 +107,32 @@ export const featured: FeaturedProject[] = [
   {
     name: 'Perch',
     repo: 'perch',
+    slug: 'perch',
+    page: perch,
     icon: Bird,
     language: 'Swift',
     description:
       'Personal macOS menu bar app: fuzzy launcher, clipboard history, inline calculator, window management, CPU meters, and an unpushed-commits warning. A fork of Tinycast.',
+  },
+  {
+    name: 'T3 Code',
+    repo: 't3code',
+    slug: 't3code',
+    page: t3code,
+    icon: SquareTerminal,
+    language: 'TypeScript',
+    description:
+      'Personal fork of T3 Code, the app for running coding agents. Adds worktree landing, Git sync before push, justfile recipes, and a clearer timeline.',
+  },
+  {
+    name: 'Riffle',
+    repo: 'riffle',
+    slug: 'riffle',
+    page: riffle,
+    icon: MailSearch,
+    language: 'TypeScript',
+    description:
+      'Backs up a Gmail mailbox to your own S3 bucket every 5 minutes, then searches it in plain English from a macOS menu bar app.',
   },
 ]
 
@@ -190,3 +248,8 @@ export const talks: Talk[] = [
 ]
 
 export const repoUrl = github
+
+export const projectPath = (slug: string) => `/projects/${slug}/`
+
+export const findProject = (pathname: string) =>
+  featured.find((p) => pathname.replace(/\/?$/, '/') === projectPath(p.slug))
