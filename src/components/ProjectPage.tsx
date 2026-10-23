@@ -3,7 +3,7 @@ import { siGithub } from 'simple-icons'
 import { featured, projectPath, repoUrl, type Feature, type FeaturedProject } from '../data'
 import { CopyButton } from './CopyButton'
 import { LanguageLogo } from './LanguageLogo'
-import { MediaGallery } from './MediaGallery'
+import { MediaGallery, MediaItem } from './MediaGallery'
 import { ThemeToggle } from './ThemeToggle'
 
 export function ProjectPage({ project }: { project: FeaturedProject }) {
@@ -80,6 +80,35 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
         <section className="mt-16">
           <SectionHeading>Screenshots</SectionHeading>
           <MediaGallery media={page.media} />
+        </section>
+      )}
+
+      {page.highlights && (
+        <section className="mt-16">
+          <SectionHeading>{page.highlights.heading}</SectionHeading>
+          <div className="space-y-14">
+            {page.highlights.items.map((highlight, index) => (
+              <div
+                key={highlight.title}
+                className={`grid items-center gap-6 sm:gap-10 ${index % 2 ? 'sm:grid-cols-[3fr_2fr]' : 'sm:grid-cols-[2fr_3fr]'}`}
+              >
+                <div className={`border-t-2 border-accent/70 pt-4 ${index % 2 ? 'sm:order-last' : ''}`}>
+                  <h3 className="text-lg font-semibold">{highlight.title}</h3>
+                  <p className="mt-2 leading-relaxed text-pretty text-neutral-600 dark:text-neutral-400">
+                    <Inline text={highlight.body} />
+                  </p>
+                </div>
+                {/* Retina captures: show each one no larger than its point size. */}
+                <figure
+                  style={{ maxWidth: highlight.media.width / 2 }}
+                  className="w-full justify-self-center overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800"
+                >
+                  <MediaItem item={highlight.media} />
+                  <figcaption className="sr-only">{highlight.media.alt}</figcaption>
+                </figure>
+              </div>
+            ))}
+          </div>
         </section>
       )}
 

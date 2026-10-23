@@ -34,6 +34,44 @@ export const perch: ProjectPageContent = {
       height: 1140,
     },
   ],
+  highlights: {
+    heading: 'Added in Perch',
+    items: [
+      {
+        title: 'Disk history',
+        body: 'Perch records the startup disk once an hour to a CSV file. The menu shows free space now and the change this week. The window charts free space, used space, or the change per interval, over a day, a week, a month, a year, or all of the history.',
+        media: {
+          kind: 'image',
+          src: '/media/perch/disk-history.webp',
+          alt: 'The Disk History window: 31.33 GB free of 994.66 GB, from 122 hourly samples. A line chart shows free space for the past week.',
+          width: 1240,
+          height: 1040,
+        },
+      },
+      {
+        title: 'Git Watch',
+        body: 'Git Watch looks for default branches with commits that are not pushed. It scans folders on this Mac, and on other machines over SSH, every 10 minutes and after the Mac wakes. A count appears next to the CPU meter. The window can push a branch, show the repository in Finder, or ignore it.',
+        media: {
+          kind: 'image',
+          src: '/media/perch/git-watch.webp',
+          alt: 'The Git Watch window: 2 repos to push. shadcn-spike was never pushed, and infrastructure is 1 commit ahead. Each row has Finder, Push, and Ignore buttons.',
+          width: 1120,
+          height: 522,
+        },
+      },
+      {
+        title: 'Proxmox panel',
+        body: 'The panel shows the CPU use of a Proxmox host and the share each VM and container takes. Perch keeps the API token in the Keychain. A host with a self-signed certificate works after you compare its fingerprint and pin it.',
+        media: {
+          kind: 'image',
+          src: '/media/perch/proxmox.webp',
+          alt: 'The Proxmox window: host CPU at 4% on 16 cores, then each guest container and VM with its share of the host CPU.',
+          width: 880,
+          height: 1040,
+        },
+      },
+    ],
+  },
   features: [
     {
       title: 'Launcher and hotkeys',
@@ -44,16 +82,12 @@ export const perch: ProjectPageContent = {
       body: 'Earlier clipboard entries stay available. An emoji picker lives in the same app.',
     },
     {
-      title: 'CPU meters',
-      body: 'A per-core CPU meter in the menu bar. It is new code that replaces MenuMeters.',
+      title: 'Window management',
+      body: 'Launcher commands move and resize the front window. They can cycle through sizes, and you can add custom sizes.',
     },
     {
-      title: 'Proxmox panel',
-      body: 'A panel that shows CPU use on a Proxmox host.',
-    },
-    {
-      title: 'Unpushed commit warning',
-      body: 'The menu bar warns when git commits have not been pushed.',
+      title: 'CPU meter',
+      body: 'Not in Tinycast. A bar for each core in the menu bar, with efficiency cores drawn dimmer. The menu lists the top processes and can quit them. It takes its design from MenuMeters but is new code.',
     },
     {
       title: 'Close to upstream',

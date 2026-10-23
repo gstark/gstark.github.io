@@ -40,6 +40,17 @@ codex exec -m gpt-6-astra -s danger-full-access --skip-git-repo-check - < captur
 capture/optimize.sh perch
 ```
 
+The agent cannot click the menu bar item. To capture the windows, open Disk History, Git Watch, and Proxmox from the Perch menu yourself. Then run `perch-windows-prompt.md`. The agent saves the front window, closes it with Command+W, and continues with the next window.
+
+Git Watch lists the repositories you ignored below the ones to push. Crop it to the header and the first rows before you copy it in:
+
+```sh
+codex exec -m gpt-6-astra -s danger-full-access --skip-git-repo-check - < capture/perch-windows-prompt.md
+magick /tmp/perch-cap/raw/git-watch.png -crop 1120x522+0+0 +repage /tmp/perch-cap/raw/git-watch.png
+/bin/cp /tmp/perch-cap/raw/*.png public/media/perch/
+capture/optimize.sh perch
+```
+
 ## decent_job
 
 Start the example app from the decent_job repo against its own database. Let it run for a few minutes so the charts have data.

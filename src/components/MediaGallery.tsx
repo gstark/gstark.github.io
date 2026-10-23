@@ -9,7 +9,7 @@ export function MediaGallery({ media }: { media: Media[] }) {
       {media.map((item, index) => (
         <figure
           key={item.src}
-          className={`overflow-hidden rounded-xl border border-neutral-200 bg-neutral-950 dark:border-neutral-800 ${index === 0 ? 'sm:col-span-2' : ''}`}
+          className={`overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 ${index === 0 ? 'sm:col-span-2' : ''}`}
         >
           <MediaItem item={item} />
           <figcaption className="sr-only">{item.alt}</figcaption>
@@ -19,7 +19,7 @@ export function MediaGallery({ media }: { media: Media[] }) {
   )
 }
 
-function MediaItem({ item }: { item: Media }) {
+export function MediaItem({ item }: { item: Media }) {
   const className = 'block h-auto w-full'
   if (item.kind === 'video') {
     return (

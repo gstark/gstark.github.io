@@ -26,6 +26,9 @@ export type Media =
   | { kind: 'image'; src: string; alt: string; width: number; height: number }
   | { kind: 'video'; src: string; poster: string; alt: string; width: number; height: number }
 
+// A feature large enough to show with its own screenshot.
+export type Highlight = { title: string; body: string; media: Media }
+
 export type ProjectPageContent = {
   tagline: string
   summary: string[]
@@ -36,6 +39,7 @@ export type ProjectPageContent = {
   upstream?: { name: string; url: string }
   example?: CodeSample
   media?: Media[]
+  highlights?: { heading: string; items: Highlight[] }
   features: Feature[]
   steps: { title: string; body?: string; code?: string; file?: string }[]
 }
