@@ -66,7 +66,7 @@ export const profile = {
   bio: [
     ['These days I build software and AI agents for small and midsize companies, mostly in Ruby and React. Most of my clients don’t have a full engineering team, so I become one: requirements, code, infrastructure, deployment, and support. When something breaks in production, I’m the one who figures out why.'],
     [
-      'I’ve been writing software since 1992. For fifteen years I was the engineer behind NEOCAST’s digital signage network: I built the Rails platform that served millions of requests a day, and the custom Linux that booted thousands of screens on Intel and ARM hardware. Before that I wrote C and C++ for phone networks and ',
+      'For fifteen years I was the engineer behind the digital signage network at NEOCAST (Real Digital Media): I built the Rails platform that served millions of requests a day, and the custom Linux that booted thousands of screens on Intel and ARM hardware. Before that I wrote C and C++ for phone networks and ',
       { text: 'launch-vehicle tracking at Honeywell Space Systems', href: 'https://en.wikipedia.org/wiki/BMRST' },
       '.',
     ],

@@ -8,9 +8,9 @@ export default function App() {
       <header className="flex items-start justify-between gap-6">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{profile.name}</h1>
-          <p className="max-w-xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">{profile.tagline}</p>
+          <p className="max-w-xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">{profile.tagline}</p>
           {profile.bio.map((paragraph, i) => (
-            <p key={i} className="max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-400">
+            <p key={i} className="max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-300">
               {paragraph.map((segment, j) =>
                 typeof segment === 'string' ? (
                   segment
@@ -32,7 +32,7 @@ export default function App() {
       </header>
 
       <section id="projects" className="mt-20">
-        <SectionHeading>Open source</SectionHeading>
+        <SectionHeading>Projects</SectionHeading>
         <div className="grid gap-4 sm:grid-cols-2">
           {featured.map((p) => (
             <ProjectCard key={p.repo} project={p} />

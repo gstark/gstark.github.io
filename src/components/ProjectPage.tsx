@@ -52,7 +52,7 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
               <Inline text={paragraph} />
             </p>
           ))}
-          <aside className="flex gap-3 rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900/60 dark:text-neutral-400">
+          <aside className="flex gap-3 rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900/60 dark:text-neutral-300">
             <Info className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden />
             <p><Inline text={page.note} /></p>
           </aside>
@@ -95,7 +95,7 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
               >
                 <div className={`border-t-2 border-accent/70 pt-4 ${index % 2 ? 'sm:order-last' : ''}`}>
                   <h3 className="text-lg font-semibold">{highlight.title}</h3>
-                  <p className="mt-2 leading-relaxed text-pretty text-neutral-600 dark:text-neutral-400">
+                  <p className="mt-2 leading-relaxed text-pretty text-neutral-600 dark:text-neutral-300">
                     <Inline text={highlight.body} />
                   </p>
                 </div>
@@ -130,7 +130,7 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
                 {features.map((feature) => (
                   <div key={feature.title} className="border-t-2 border-accent/70 pt-4">
                     <h4 className="font-semibold">{feature.title}</h4>
-                    <p className="mt-1.5 text-sm leading-relaxed text-pretty text-neutral-600 dark:text-neutral-400">
+                    <p className="mt-1.5 text-sm leading-relaxed text-pretty text-neutral-600 dark:text-neutral-300">
                       <Inline text={feature.body} />
                     </p>
                     {(feature.prs || feature.video) && (
@@ -162,7 +162,7 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
               <div className="min-w-0 flex-1 space-y-3 pt-1">
                 <h3 className="font-semibold">{step.title}</h3>
                 {step.body && (
-                  <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                  <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
                     <Inline text={step.body} />
                   </p>
                 )}

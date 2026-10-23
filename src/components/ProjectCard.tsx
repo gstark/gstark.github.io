@@ -18,7 +18,7 @@ export function ProjectCard({ project }: { project: FeaturedProject }) {
           {project.language}
         </span>
       </div>
-      <p className="text-sm leading-relaxed text-pretty text-neutral-600 dark:text-neutral-400">{project.description}</p>
+      <p className="text-sm leading-relaxed text-pretty text-neutral-600 dark:text-neutral-300">{project.description}</p>
     </a>
   )
 }
@@ -30,7 +30,7 @@ export function ProjectRow({ project }: { project: Project }) {
       className="group flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-4"
     >
       <span className="w-48 shrink-0 font-medium group-hover:text-accent">{project.name}</span>
-      <span className="flex-1 text-sm text-neutral-600 dark:text-neutral-400">{project.description}</span>
+      <span className="flex-1 text-sm text-neutral-600 dark:text-neutral-300">{project.description}</span>
       <span className="font-mono text-xs text-neutral-500">{project.language}</span>
     </a>
   )
