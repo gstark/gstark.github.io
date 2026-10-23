@@ -1,6 +1,7 @@
-import { Bird, Bot, Gauge, ListChecks, MailSearch, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
+import { Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Route, SquareTerminal, Stamp, type LucideIcon } from 'lucide-react'
 import { agentManager } from './projects/agent-manager.ts'
 import { decentJob } from './projects/decent-job.ts'
+import { networkStatusFilters } from './projects/network-status-filters.ts'
 import { perch } from './projects/perch.ts'
 import { raxon } from './projects/raxon.ts'
 import { riffle } from './projects/riffle.ts'
@@ -133,6 +134,16 @@ export const featured: FeaturedProject[] = [
     language: 'TypeScript',
     description:
       'Backs up a Gmail mailbox to your own S3 bucket every 5 minutes, then searches it in plain English from a macOS menu bar app.',
+  },
+  {
+    name: 'Network status filters',
+    repo: 'chrome-devtools-network-status-filters',
+    slug: 'network-status-filters',
+    page: networkStatusFilters,
+    icon: ListFilter,
+    language: 'TypeScript',
+    description:
+      'A Chrome DevTools patch that filters the Network panel by status: 2xx, 3xx, 4xx, 5xx, or an expression such as >=500.',
   },
 ]
 

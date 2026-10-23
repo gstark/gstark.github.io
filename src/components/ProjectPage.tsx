@@ -52,7 +52,7 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
           ))}
           <aside className="flex gap-3 rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900/60 dark:text-neutral-400">
             <Info className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden />
-            <p>{page.note}</p>
+            <p><Inline text={page.note} /></p>
           </aside>
         </div>
         <dl className="space-y-4 text-sm">
