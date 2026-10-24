@@ -1,10 +1,12 @@
-import { Archive, Bird, Bot, Gauge, ListChecks, ListFilter, MailSearch, Printer, Route, SquareTerminal, Stamp, Waypoints, type LucideIcon } from 'lucide-react'
+import { Archive, Bird, Bot, Gauge, Grid3x3, ListChecks, ListFilter, MailSearch, Palette, Printer, Route, SquareTerminal, Stamp, Waypoints, type LucideIcon } from 'lucide-react'
 import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
 import { decentJob } from './projects/decent-job.ts'
 import { networkStatusFilters } from './projects/network-status-filters.ts'
 import { perch } from './projects/perch.ts'
+import { pietTicTacToe } from './projects/piet-tic-tac-toe.ts'
+import { posterize } from './projects/posterize.ts'
 import { raxon } from './projects/raxon.ts'
 import { riffle } from './projects/riffle.ts'
 import { shoebox } from './projects/shoebox.ts'
@@ -181,6 +183,26 @@ export const featured: FeaturedProject[] = [
       'Python library that writes Bambu Studio project files: printer and filament presets, multi-color parts, and several plates, ready to slice.',
   },
   {
+    name: 'posterize',
+    repo: 'posterize',
+    slug: 'posterize',
+    page: posterize,
+    icon: Palette,
+    language: 'Python',
+    description:
+      'Turns a flat-color PNG into a multi-color Bambu Studio print. Matches colors to your filaments, splits large art across plates, and adds dowel holes and wall keyholes.',
+  },
+  {
+    name: 'piet-tic-tac-toe',
+    repo: 'piet-tic-tac-toe',
+    slug: 'piet-tic-tac-toe',
+    page: pietTicTacToe,
+    icon: Grid3x3,
+    language: 'Piet',
+    description:
+      'Tic-tac-toe written in Piet, the esoteric language whose programs are images. A Perl compiler turns C-like source into the 331 by 13,709 pixel program.',
+  },
+  {
     name: 'a_star',
     repo: 'a_star',
     slug: 'a_star',
@@ -214,12 +236,6 @@ export const more: Project[] = [
     repo: 'sdg',
     language: 'Ruby',
     description: 'Rails application for managing Suncoast Developers Guild cohorts and students.',
-  },
-  {
-    name: 'piet-tic-tac-toe',
-    repo: 'piet-tic-tac-toe',
-    language: 'Piet',
-    description: 'Tic-tac-toe written in Piet, the esoteric language whose programs are images.',
   },
   {
     name: 'ts-to-zod',
