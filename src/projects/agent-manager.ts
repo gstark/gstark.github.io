@@ -9,7 +9,7 @@ export const agentManager: ProjectPageContent = {
   status: 'v0.1',
   note: 'A personal project, built for my own Claude Code and Codex setup.',
   license: 'MIT',
-  install: 'brew install gstark/tap/agm',
+  install: 'go install github.com/gstark/agent-manager/cmd/agm@latest',
   media: [
     {
       kind: 'video',
@@ -62,8 +62,8 @@ content = "Use RSpec for all Ruby tests"`,
   steps: [
     {
       title: 'Install',
-      body: 'Or `go install github.com/gstark/agent-manager/cmd/agm@latest`.',
-      code: 'brew install gstark/tap/agm',
+      body: 'Or build from source with `make build`.',
+      code: 'go install github.com/gstark/agent-manager/cmd/agm@latest',
     },
     {
       title: 'Set up a project',

@@ -9,7 +9,7 @@ export const sigil: ProjectPageContent = {
   status: 'v0.1, experimental',
   note: 'A personal research project. It runs real programs, and the largest is a 2,000 line double-entry accounting service with an HTTP API. Contracts use property testing, not an SMT solver. The compiler is written in Rust, and the bytecode VM runs about four times slower than Ruby on the benchmark in the docs.',
   license: 'MIT',
-  install: 'brew install gstark/sigil/sigil',
+  install: 'brew install gstark/tap/sigil',
   example: {
     file: 'ledger.sg',
     code: `/// Takes money out of an account.
@@ -62,7 +62,7 @@ fn Ledger.debit(ledger: Ledger, account: Account, amount: Int) -> Ledger
     {
       title: 'Install',
       body: 'Or build from source with `cargo install --path crates/sigil-cli --locked`. The standard library is compiled into the binary.',
-      code: 'brew install gstark/sigil/sigil',
+      code: 'brew install gstark/tap/sigil',
     },
     {
       title: 'Try a file',
