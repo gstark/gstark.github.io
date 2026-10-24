@@ -1,4 +1,4 @@
-import { Archive, Bird, Bot, Gauge, Grid3x3, ListChecks, ListFilter, MailSearch, Palette, Printer, Route, SquareTerminal, Stamp, Waypoints, type LucideIcon } from 'lucide-react'
+import { Archive, Bird, Bot, Braces, Gauge, Grid3x3, ListChecks, ListFilter, MailSearch, Palette, Printer, Route, ShieldCheck, SquareTerminal, Stamp, Waypoints, type LucideIcon } from 'lucide-react'
 import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
@@ -11,7 +11,9 @@ import { raxon } from './projects/raxon.ts'
 import { riffle } from './projects/riffle.ts'
 import { shoebox } from './projects/shoebox.ts'
 import { sigil } from './projects/sigil.ts'
+import { swaggerTypescriptApi } from './projects/swagger-typescript-api.ts'
 import { t3code } from './projects/t3code.ts'
+import { tsToZod } from './projects/ts-to-zod.ts'
 import { whichdns } from './projects/whichdns.ts'
 
 export type Project = {
@@ -213,6 +215,26 @@ export const featured: FeaturedProject[] = [
       'A* path search as a Ruby gem, driven by procs for the goal, neighbors, weight, and heuristic. Extracted from my Advent of Code solutions.',
   },
   {
+    name: 'ts-to-zod',
+    repo: 'ts-to-zod',
+    slug: 'ts-to-zod',
+    page: tsToZod,
+    icon: ShieldCheck,
+    language: 'Ruby',
+    description:
+      'Ruby gem that turns TypeScript interfaces, type aliases, and enums into Zod schemas, ordered so each schema follows the ones it uses.',
+  },
+  {
+    name: 'swagger-typescript-api',
+    repo: 'swagger-typescript-api',
+    slug: 'swagger-typescript-api',
+    page: swaggerTypescriptApi,
+    icon: Braces,
+    language: 'Ruby',
+    description:
+      'Ruby gem that writes TypeScript types from an OpenAPI 3.0 or 3.1 spec, with JSDoc from descriptions and custom types through x-ts-type.',
+  },
+  {
     name: 'Network status filters',
     repo: 'chrome-devtools-network-status-filters',
     slug: 'network-status-filters',
@@ -236,18 +258,6 @@ export const more: Project[] = [
     repo: 'sdg',
     language: 'Ruby',
     description: 'Rails application for managing Suncoast Developers Guild cohorts and students.',
-  },
-  {
-    name: 'ts-to-zod',
-    repo: 'ts-to-zod',
-    language: 'Ruby',
-    description: 'Ruby gem that converts TypeScript type definitions to Zod validation schemas.',
-  },
-  {
-    name: 'swagger-typescript-api',
-    repo: 'swagger-typescript-api',
-    language: 'Ruby',
-    description: 'Ruby gem that generates TypeScript type definitions from OpenAPI 3.0 and 3.1 specifications.',
   },
   {
     name: 'gsde',
