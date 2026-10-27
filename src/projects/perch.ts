@@ -70,6 +70,17 @@ export const perch: ProjectPageContent = {
           height: 1040,
         },
       },
+      {
+        title: 'AI process labels',
+        body: 'The CPU menu names a busy process by its executable, and `node` or `corespotlightd` alone says little. When a process stays in the top 10 for 5 seconds, Perch reads its path, arguments, working directory, and parent, and asks an OpenAI-compatible chat service what it does. The answer appears in grey after the name. Apps such as Siri already have a clear name, so Perch skips them. Before the request goes out, Perch hides tokens, passwords, long hashes, and URL credentials, and replaces ports and pids with `#`. It caches labels by that redacted text, so two dev servers on different ports in the same folder cost one request. The endpoint can be OpenAI, OpenRouter, or a local Ollama.',
+        media: {
+          kind: 'image',
+          src: '/media/perch/process-labels.webp',
+          alt: 'The CPU menu under Top Processes: Siri at 94%, corespotlightd labelled "Spotlight indexing" at 17%, and process 51140 labelled "System Settings helper agent" at 15%.',
+          width: 750,
+          height: 294,
+        },
+      },
     ],
   },
   features: [
