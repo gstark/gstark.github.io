@@ -31,6 +31,16 @@ vhs capture/sigil.tape
 capture/optimize.sh sigil
 ```
 
+## tix
+
+Use a Convex dev deployment for the clip, so it does not show your own tasks. In the tix clone, make a token on the dev deployment and log in with a separate config. `tix-seed.sh` makes a demo repository in `/tmp/tix-demo/web` and deletes its old tasks.
+
+```sh
+TIX_CONFIG=/tmp/tix-demo/config.toml tix login --url https://<dev deployment>.convex.cloud --token tix_...
+TIX_CONFIG=/tmp/tix-demo/config.toml vhs capture/tix.tape
+capture/optimize.sh tix
+```
+
 ## Perch
 
 A person, or a computer-use agent, must drive the live palette, because the hotkey needs keyboard input. `perch-prompt.md` holds the steps that gpt-6-astra followed through Codex. Do not open clipboard history: it shows your own clipboard.
