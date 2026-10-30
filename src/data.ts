@@ -253,7 +253,7 @@ export const featured: FeaturedProject[] = [
     icon: ListFilter,
     language: 'TypeScript',
     description:
-      'A Chrome DevTools patch that filters the Network panel by status: 2xx, 3xx, 4xx, 5xx, or an expression such as >=500.',
+      'A Chrome DevTools patch that filters the Network panel by status: 2xx, 3xx, 4xx, 5xx, or an expression such as >=500. Helium Dev ships it for Helium.',
   },
 ]
 
