@@ -153,7 +153,7 @@ export const featured: FeaturedProject[] = [
     icon: Bird,
     language: 'Swift',
     description:
-      'Personal macOS menu bar app: fuzzy launcher, clipboard history, inline calculator, window management, CPU meters, and an unpushed-commits warning. A fork of Tinycast.',
+      'Personal macOS menu bar app: fuzzy launcher, clipboard history, inline calculator, window management, CPU meters, an unpushed-commits warning, and a build-folder cleaner. A fork of Tinycast.',
   },
   {
     name: 'T3 Code',

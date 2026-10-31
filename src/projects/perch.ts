@@ -3,7 +3,7 @@ import type { ProjectPageContent } from '../data.ts'
 export const perch: ProjectPageContent = {
   tagline: 'My macOS menu bar, cut down from Tinycast and rebuilt for one Mac.',
   summary: [
-    'Perch is my personal macOS menu bar app. It has a fuzzy app launcher, global hotkeys, clipboard history, an inline calculator with unit conversion, an emoji picker, and window management.',
+    'Perch is my personal macOS menu bar app. It has a fuzzy app launcher, global hotkeys, clipboard history, an inline calculator with unit conversion, an emoji picker, window management, and a cleaner for project build folders.',
     'It started from Tinycast on 2026-10-05. Most of Tinycast\'s features are gone, and Perch adds a few things of its own.',
   ],
   status: 'Personal fork, no releases',
@@ -46,6 +46,17 @@ export const perch: ProjectPageContent = {
           alt: 'The Disk History window: 31.33 GB free of 994.66 GB, from 122 hourly samples. A line chart shows free space for the past week.',
           width: 1240,
           height: 1040,
+        },
+      },
+      {
+        title: 'Project cleanup',
+        body: 'A scan of the folders you choose finds build folders that projects can rebuild, such as `node_modules`, `target`, `.venv`, and a Rails app\'s `tmp/cache`. The window groups projects by kind and sorts them by the space they give back. You can move a project or a whole group to the Trash, or delete it at once, and every removal asks first. The project kinds come from kondo, but the walk also lists nested projects and skips symlinks. A scan of my `~/dev` takes 26 seconds.',
+        media: {
+          kind: 'image',
+          src: '/media/perch/cleanup.webp',
+          alt: 'The Clean Up Projects window after a scan of ~/dev: 21 projects, 611.3 MB. Folded groups list Cargo at 597.9 MB, CocoaPods, Composer, Maven, and Elixir, each with Trash and Delete buttons.',
+          width: 1268,
+          height: 1130,
         },
       },
       {

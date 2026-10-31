@@ -50,7 +50,7 @@ codex exec -m gpt-6-astra -s danger-full-access --skip-git-repo-check - < captur
 capture/optimize.sh perch
 ```
 
-The agent cannot click the menu bar item. To capture the windows, open Disk History, Git Watch, and Proxmox from the Perch menu yourself. Then run `perch-windows-prompt.md`. The agent saves the front window, closes it with Command+W, and continues with the next window.
+The agent cannot click the menu bar item. To capture the windows, open Disk History, Git Watch, Proxmox, and Clean Up Projects from the Perch menu yourself. Scan a folder you are happy to show before the capture, because the list shows project paths. Then run `perch-windows-prompt.md`. The agent saves the front window, closes it with Command+W, and continues with the next window.
 
 Git Watch lists the repositories you ignored below the ones to push. Crop it to the header and the first rows before you copy it in:
 
