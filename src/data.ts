@@ -1,4 +1,4 @@
-import { Archive, Bird, Bot, Braces, Gauge, Grid3x3, ListChecks, ListFilter, MailSearch, Palette, Printer, Route, ShieldCheck, SquareTerminal, Stamp, Ticket, Waypoints, type LucideIcon } from 'lucide-react'
+import { Archive, Bird, Bot, Braces, Clapperboard, Gauge, Grid3x3, ListChecks, ListFilter, MailSearch, Palette, Printer, Route, ShieldCheck, SquareTerminal, Stamp, Ticket, Waypoints, type LucideIcon } from 'lucide-react'
 import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
@@ -8,6 +8,7 @@ import { perch } from './projects/perch.ts'
 import { pietTicTacToe } from './projects/piet-tic-tac-toe.ts'
 import { posterize } from './projects/posterize.ts'
 import { raxon } from './projects/raxon.ts'
+import { reel } from './projects/reel.ts'
 import { riffle } from './projects/riffle.ts'
 import { shoebox } from './projects/shoebox.ts'
 import { sigil } from './projects/sigil.ts'
@@ -154,6 +155,16 @@ export const featured: FeaturedProject[] = [
     language: 'Swift',
     description:
       'Personal macOS menu bar app: fuzzy launcher, clipboard history, inline calculator, window management, CPU meters, an unpushed-commits warning, and a build-folder cleaner. A fork of Tinycast.',
+  },
+  {
+    name: 'Reel',
+    repo: 'reel',
+    slug: 'reel',
+    page: reel,
+    icon: Clapperboard,
+    language: 'Swift',
+    description:
+      'Minimal macOS video player on libmpv. The window fits the video, the controls never cover it, and one key copies the frames around a pause with their frame numbers.',
   },
   {
     name: 'T3 Code',

@@ -78,3 +78,22 @@ Then, from this repo. The script uses the installed Google Chrome:
 node capture/decent-job.mjs
 capture/optimize.sh decent_job
 ```
+
+## Reel
+
+The clip is 30 seconds of Big Buck Bunny (CC BY 3.0) from 1:10, from the 1080p copy on Wikimedia Commons. An MP4 gives exact frame numbers.
+
+```sh
+mkdir -p /tmp/reel-cap/video /tmp/reel-cap/raw && cd /tmp/reel-cap/video
+curl -fsSO https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.1080p.vp9.webm
+ffmpeg -ss 70 -i Big_Buck_Bunny_4K.webm.1080p.vp9.webm -t 30 -an -c:v libx264 -crf 18 -pix_fmt yuv420p big-buck-bunny.mp4
+```
+
+Open the clip in Reel and pause on frame 640. A person, or a computer-use agent, must press the keys. Capture the window with `screencapture -o -l <windowID>`. Then press Shift+Command+C. Open the new folder in `~/Library/Caches/com.gstark.Reel/Frames/` in Finder with icon view, labels at the bottom, no toolbar, and no sidebar, and capture that window too.
+
+A film frame is large as lossless WebP, so convert these two with loss instead of `optimize.sh`:
+
+```sh
+cwebp -q 88 -m 6 player.png -o public/media/reel/player.webp
+cwebp -q 85 -m 6 frames.png -o public/media/reel/frames.webp
+```
