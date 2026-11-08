@@ -1,4 +1,4 @@
-import { Archive, Atom, Binary, Bird, Bot, Braces, Bug, Clapperboard, Coffee, Gauge, Gem, GitBranch, Grid3x3, InfinityIcon, ListChecks, ListFilter, Lock, MailSearch, OctagonPause, Package, Palette, Printer, Repeat, Route, ShieldCheck, SquareTerminal, Stamp, Ticket, Users, WandSparkles, Waypoints, Workflow, type LucideIcon } from 'lucide-react'
+import { Archive, Atom, Binary, Bird, Bot, Braces, Bug, Clapperboard, Coffee, Gauge, Gem, GitBranch, Grid3x3, InfinityIcon, ListChecks, ListFilter, Lock, MailSearch, OctagonPause, Package, Palette, Printer, Repeat, Route, ShieldCheck, SquareTerminal, Stamp, StickyNote, Users, WandSparkles, Waypoints, Workflow, type LucideIcon } from 'lucide-react'
 import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
@@ -14,7 +14,7 @@ import { shoebox } from './projects/shoebox.ts'
 import { sigil } from './projects/sigil.ts'
 import { swaggerTypescriptApi } from './projects/swagger-typescript-api.ts'
 import { t3code } from './projects/t3code.ts'
-import { tix } from './projects/tix.ts'
+import { slip } from './projects/slip.ts'
 import { tsToZod } from './projects/ts-to-zod.ts'
 import { whichdns } from './projects/whichdns.ts'
 
@@ -137,14 +137,14 @@ export const featured: FeaturedProject[] = [
       'The agm CLI, a package manager for AI agent skills, rules, and policies. Curate once, then install the right set into any Claude Code or Codex project.',
   },
   {
-    name: 'tix',
-    repo: 'tix',
-    slug: 'tix',
-    page: tix,
-    icon: Ticket,
+    name: 'slip',
+    repo: 'slip',
+    slug: 'slip',
+    page: slip,
+    icon: StickyNote,
     language: 'TypeScript',
     description:
-      'Private code tasks for coding agents, stored in your own Convex deployment. A CLI, an MCP server, and Claude Code skills share one task tree across repositories and machines.',
+      'Private code tasks for coding agents, stored in your own Convex deployment. A CLI, a live terminal board, an MCP server, and Claude Code skills share one task tree across repositories and machines.',
   },
   {
     name: 'Perch',

@@ -31,14 +31,14 @@ vhs capture/sigil.tape
 capture/optimize.sh sigil
 ```
 
-## tix
+## slip
 
-Use a Convex dev deployment for the clip, so it does not show your own tasks. In the tix clone, make a token on the dev deployment and log in with a separate config. `tix-seed.sh` makes a demo repository in `/tmp/tix-demo/web` and deletes its old tasks.
+Use a Convex dev deployment for the clip, so it does not show your own tasks. In the slip clone, make a token on the dev deployment and log in with a separate config. `slip-seed.sh` makes a demo repository in `/tmp/slip-demo/web` and deletes its old tasks. The slip page has no media yet. After the capture, add the clip to `media` in `src/projects/slip.ts`.
 
 ```sh
-TIX_CONFIG=/tmp/tix-demo/config.toml tix login --url https://<dev deployment>.convex.cloud --token tix_...
-TIX_CONFIG=/tmp/tix-demo/config.toml vhs capture/tix.tape
-capture/optimize.sh tix
+SLIP_CONFIG=/tmp/slip-demo/config.toml slip login --url https://<dev deployment>.convex.cloud --token slip_...
+SLIP_CONFIG=/tmp/slip-demo/config.toml vhs capture/slip.tape
+capture/optimize.sh slip
 ```
 
 ## Perch
