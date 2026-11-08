@@ -6,10 +6,10 @@ export const shoebox: ProjectPageContent = {
     'With "Optimize Mac Storage" on, most of your originals live only in iCloud. A copy of the Photos library folder misses them, and turning the setting off fills the disk.',
     'Shoebox reads the Photos database, copies the originals that are on the Mac, and downloads the rest one at a time. A menu bar app runs the backup on a schedule. A `shoebox` CLI runs the same backup and lets you look around the library.',
   ],
-  status: 'Personal project, no releases',
+  status: 'Personal project, early',
   note: 'Shoebox started as a fork of darwin-photos by cleanexit0, a Go CLI. The idea of reading the Photos database and pulling cloud-only originals comes from that project. Shoebox is now a Swift rewrite that does not track upstream. There are no release builds, so you build it from source with Xcode.',
   license: 'MIT',
-  install: 'git clone https://github.com/gstark/shoebox.git && cd shoebox && make install',
+  install: 'brew install gstark/tap/shoebox',
   upstream: { name: 'darwin-photos', url: 'https://github.com/cleanexit0/darwin-photos' },
   example: {
     file: 'backup.sh',
@@ -71,10 +71,9 @@ shoebox backup --s3-profile photos-backup s3://my-bucket/photos-backup`,
   ],
   steps: [
     {
-      title: 'Build and install',
-      body: 'You need macOS 26, Xcode, XcodeGen, and an Apple Development signing certificate. The command installs the app in /Applications and links the CLI to ~/.local/bin/shoebox.',
-      code: `git clone https://github.com/gstark/shoebox.git && cd shoebox
-make install`,
+      title: 'Install',
+      body: 'Homebrew installs the app and the `shoebox` CLI. The build is for Apple silicon, and it needs macOS 26. It is signed but not notarized. To build from source, clone the repository and run `just install` with Xcode, XcodeGen, just, and an Apple Development signing certificate.',
+      code: 'brew install gstark/tap/shoebox',
     },
     {
       title: 'Grant access',

@@ -164,7 +164,7 @@ export const featured: FeaturedProject[] = [
     icon: Clapperboard,
     language: 'Swift',
     description:
-      'Minimal macOS video player on libmpv. The window fits the video, the controls never cover it, and one key copies the frames around a pause with their frame numbers.',
+      'Minimal macOS video player on libmpv. The window fits the video, a frame strip and J, K, L scrub it, and one key copies the frames around a pause. Exports clips and PNG frames.',
   },
   {
     name: 'T3 Code',
@@ -184,7 +184,7 @@ export const featured: FeaturedProject[] = [
     icon: MailSearch,
     language: 'TypeScript',
     description:
-      'Backs up a Gmail mailbox to your own S3 bucket every 5 minutes, then searches it in plain English from a macOS menu bar app.',
+      'Backs up a Gmail mailbox to your own S3 bucket every 5 minutes, searches it in plain English from a macOS menu bar app, and finds every receipt in it.',
   },
   {
     name: 'Shoebox',

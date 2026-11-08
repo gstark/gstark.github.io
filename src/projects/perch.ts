@@ -6,10 +6,10 @@ export const perch: ProjectPageContent = {
     'Perch is my personal macOS menu bar app. It has a fuzzy app launcher, global hotkeys, clipboard history, an inline calculator with unit conversion, an emoji picker, window management, and a cleaner for project build folders.',
     'It started from Tinycast on 2026-10-05. Most of Tinycast\'s features are gone, and Perch adds a few things of its own.',
   ],
-  status: 'Personal fork, no releases',
-  note: 'Perch is a personal fork of Tinycast by Abue Ammar. It is not the official Tinycast app and is not affiliated with that project. There are no releases and no support, and Perch does not accept issues or pull requests. For the full app, use Tinycast.',
+  status: 'Personal fork',
+  note: 'Perch is a personal fork of Tinycast by Abue Ammar. It is not the official Tinycast app and is not affiliated with that project. The releases are for my own Macs. They are signed but not notarized. There is no support, and Perch does not accept issues or pull requests. For the full app, use Tinycast.',
   license: 'AGPL-3.0',
-  install: 'git clone https://github.com/gstark/perch.git && cd perch && just install',
+  install: 'brew install gstark/tap/perch',
   upstream: { name: 'Tinycast', url: 'https://github.com/abue-ammar/tinycast' },
   media: [
     {
@@ -97,7 +97,7 @@ export const perch: ProjectPageContent = {
   features: [
     {
       title: 'Launcher and hotkeys',
-      body: 'A fuzzy app launcher with global hotkeys. The same panel does math and unit conversion inline.',
+      body: 'A fuzzy app launcher with global hotkeys. It also finds common folders and opens them in Finder, and a Folders setting hides the ones you do not want. The same panel does math and unit conversion inline.',
     },
     {
       title: 'Clipboard history',
@@ -118,10 +118,9 @@ export const perch: ProjectPageContent = {
   ],
   steps: [
     {
-      title: 'Build and install',
-      body: 'Perch needs macOS 26 or later and Xcode 26. If you fork it, the fork is yours to maintain.',
-      code: `git clone https://github.com/gstark/perch.git && cd perch
-just install`,
+      title: 'Install',
+      body: 'Perch needs macOS 26 or later on Apple silicon. To build it, clone the repository and run `just install` with Xcode 26. If you fork it, the fork is yours to maintain.',
+      code: 'brew install gstark/tap/perch',
     },
   ],
 }

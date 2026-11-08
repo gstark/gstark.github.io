@@ -6,10 +6,10 @@ export const posterize: ProjectPageContent = {
     'Give posterize a PNG with a few flat colors, such as a logo or a cartoon. It matches each color to a filament you own, traces each color into a vector outline, and builds a model: a solid base with each color raised on top. The output is a 3MF that Bambu Studio opens with the printer, filaments, and plates already set.',
     'Art larger than the bed gets split into a grid of plates. posterize can move the seams to cut fewer pieces, drills dowel holes so the pieces line up, and adds keyholes to hang the finished piece on a wall.',
   ],
-  status: 'v0.1, unreleased',
-  note: 'A personal project for printing large wall art. It is not on PyPI yet, so you install it from GitHub. It needs Python 3.14 or later, OpenSCAD, and potrace.',
+  status: 'v0.1',
+  note: 'A personal project for printing large wall art. It is not on PyPI. Homebrew installs it from the gstark/tap tap, with potrace. OpenSCAD is a separate cask.',
   license: 'MIT',
-  install: 'uv tool install git+https://github.com/gstark/posterize',
+  install: 'brew install gstark/tap/posterize',
   example: {
     file: 'A 240 mm badge split across two 180 mm plates',
     code: `$ posterize badge.png --width 240 --plate-size 180 --max-filaments 3
@@ -67,10 +67,9 @@ Open in Bambu Studio.`,
   steps: [
     {
       title: 'Install the tools',
-      body: 'posterize calls OpenSCAD and potrace. Put both on your `PATH`, or set `POSTERIZE_OPENSCAD` and `POSTERIZE_POTRACE`.',
-      code: `brew install potrace
-brew install --cask openscad
-uv tool install git+https://github.com/gstark/posterize`,
+      body: 'posterize calls OpenSCAD and potrace. The formula brings potrace, and OpenSCAD comes from a cask. To use other copies, set `POSTERIZE_OPENSCAD` and `POSTERIZE_POTRACE`.',
+      code: `brew install gstark/tap/posterize
+brew install --cask openscad@snapshot`,
     },
     {
       title: 'Set up your filaments',

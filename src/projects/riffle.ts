@@ -1,14 +1,15 @@
 import type { ProjectPageContent } from '../data.ts'
 
 export const riffle: ProjectPageContent = {
-  tagline: 'Back up a Gmail mailbox to your own AWS account, then search it in plain English from the menu bar.',
+  tagline: 'Back up a Gmail mailbox to your own AWS account, search it in plain English from the menu bar, and find every receipt in it.',
   summary: [
     'Riffle copies every message in a Google Workspace mailbox to an S3 bucket that you own. A Lambda function checks Gmail every 5 minutes for new messages, label changes, and deletions. A message deleted in Gmail stays in the archive.',
     'An indexer puts each message into a LanceDB table on S3, with full text and Titan embeddings. A search runs both and merges the results. You type something like "receipts from Delta last spring", Claude turns it into filters, and the Riffle menu bar app shows those filters as a sentence you can edit.',
+    'Riffle also reads the archive for receipts. Haiku 5.5 pulls the merchant, the items, and the totals from each purchase email, and Riffle saves a PDF of each receipt as proof of purchase. The menu bar app has a receipts window to browse them by merchant or by month.',
   ],
   status: 'Personal project, early',
   license: 'None yet',
-  note: 'A personal project that I built to back up my own mailbox. It runs in one AWS account, for one Google Workspace mailbox, and has a single commit so far. Expect to read the OpenTofu files before you apply them.',
+  note: 'A personal project that I built to back up my own mailbox. It runs in one AWS account, for one Google Workspace mailbox. Expect to read the OpenTofu files before you apply them.',
   install: 'git clone https://github.com/gstark/riffle.git && cd riffle && npm install',
   example: {
     file: 'search.sh',
@@ -64,6 +65,31 @@ export const riffle: ProjectPageContent = {
       body: 'The search API is a Lambda function URL behind a bearer token. The check compares hashes, so its timing does not show the token length.',
     },
     {
+      group: 'Search',
+      title: 'Exact phrases',
+      body: 'Put words in quotes to find mail that has those words in that order. Case does not matter, and Claude reads only the words outside the quotes.',
+    },
+    {
+      group: 'Receipts',
+      title: 'Receipts from the archive',
+      body: 'A keyword filter picks the likely purchase emails, and Haiku 5.5 on Bedrock reads only those. It finds orders, subscription charges, refunds, and shipping notices, and it leaves out free trials, scams, and spam. An email with two orders gives two receipts.',
+    },
+    {
+      group: 'Receipts',
+      title: 'Proof of purchase',
+      body: 'Riffle saves a PDF of each receipt email and its PDF attachments. Without an attachment, it opens up to 3 receipt links in an AgentCore browser and keeps the page only when it shows the total or the order ID. Each proof is graded, from an attached PDF down to a sign-in page or no link.',
+    },
+    {
+      group: 'Receipts',
+      title: 'Pages behind a sign-in',
+      body: 'Some receipt pages need your account. The Mac app opens them in a sign-in window, where you log in one time, and prints the PDFs in the background.',
+    },
+    {
+      group: 'Receipts',
+      title: 'Receipts window',
+      body: 'The window groups receipts by merchant or by month, with a ledger of net amounts. The search reads `$40-$60`, `q3 2025`, `card 6534`, or `refunds` on the Mac, without Claude. The Export CSV button saves the list for a spreadsheet.',
+    },
+    {
       group: 'Menu bar app',
       title: 'One shortcut away',
       body: 'Press ⌥⌘E to open the search panel. Press ↓ to move to the results and Return to open the thread in Gmail.',
@@ -106,8 +132,8 @@ node src/sync/run-backfill.ts`,
     },
     {
       title: 'Install the menu bar app',
-      body: 'It needs macOS 26, Xcode 26, XcodeGen, and just. On first start, enter the `search_url` output and the token from `~/.config/email-search/token`.',
-      code: 'just riffle',
+      body: 'It needs macOS 26. On first start, enter the `search_url` output and the token from `~/.config/email-search/token`. To build it, run `just riffle` with Xcode 26, XcodeGen, and just.',
+      code: 'brew install gstark/tap/riffle',
     },
   ],
 }

@@ -5,6 +5,7 @@ export const raxon: ProjectPageContent = {
   summary: [
     'Raxon is a Rack 3 framework for JSON APIs. Each endpoint is one Ruby file, and its path sets the URL and the HTTP method. `routes/api/v1/users/__id__/get.rb` answers `GET /api/v1/users/{id}`.',
     'The same file declares the parameters and responses. Raxon checks requests and responses against those declarations and builds the OpenAPI document from them, so the docs come from the code that runs.',
+    'A route can also render HTML. ERB views, layouts, sessions, and CSRF protection cover the pages that sit next to an API.',
   ],
   status: 'Unreleased',
   note: 'A personal project. Raxon is not on RubyGems, so you install it from GitHub.',
@@ -36,15 +37,31 @@ end`,
     },
     {
       title: 'Validation in both directions',
-      body: 'dry-schema checks the incoming parameters and the outgoing response against what the route declares.',
+      body: 'dry-schema checks the incoming parameters and the outgoing response against what the route declares. Response validation is opt-in, and `raxon new` turns it on outside production. It fails a response key that the schema does not declare, at any depth, so a stray `password_digest` shows up in development.',
     },
     {
       title: 'HTTP details done for you',
       body: '`405` with an `Allow` header, HEAD from GET, OPTIONS responses, and ETag helpers that return `304 Not Modified`.',
     },
     {
+      title: 'HTML views',
+      body: '`response.render` renders an ERB template inside a layout, with partials, `content_for`, and view helpers. A folder of `<status>.html` files gives browsers HTML error pages, and other clients keep the JSON error.',
+    },
+    {
+      title: 'Sessions and CSRF',
+      body: '`config.session_secret` turns on an encrypted cookie session and CSRF checks. Templates get `csrf_meta_tags`.',
+    },
+    {
+      title: 'Streaming and SSE',
+      body: '`response.stream` writes each chunk to the client at once. `response.sse` adds Server-Sent Events on top of it.',
+    },
+    {
+      title: 'Security settings',
+      body: '`allowed_hosts` blocks requests for other hosts. `request.remote_ip` trusts `X-Forwarded-For` only from the proxies in `trusted_proxies`. A route file that reaches outside `routes/` through a symlink fails to load.',
+    },
+    {
       title: 'Test helpers',
-      body: '`Raxon::Test` sends requests from your specs. An RSpec matcher fails when a response does not match its declared schema.',
+      body: '`Raxon::Test` sends requests from your specs, keeps cookies between them, and follows redirects. An RSpec matcher fails when a response does not match its declared schema.',
     },
     {
       title: 'Ready for coding agents',
