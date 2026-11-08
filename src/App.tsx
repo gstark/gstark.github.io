@@ -1,10 +1,10 @@
-import { ProjectCard, ProjectRow } from './components/ProjectCard'
+import { ProjectCard, ProjectRow, TalkCard } from './components/ProjectCard'
 import { ThemeToggle } from './components/ThemeToggle'
-import { featured, more, profile, repoUrl, talks } from './data'
+import { featured, more, profile, talks } from './data'
 
 export default function App() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-12 sm:py-20">
+    <div className="mx-auto max-w-4xl px-6 py-12 sm:py-20 xl:max-w-6xl">
       <header className="flex items-start justify-between gap-6">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{profile.name}</h1>
@@ -33,7 +33,7 @@ export default function App() {
 
       <section id="projects" className="mt-20">
         <SectionHeading>Projects</SectionHeading>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {featured.map((p) => (
             <ProjectCard key={p.repo} project={p} />
           ))}
@@ -49,17 +49,11 @@ export default function App() {
 
       <section id="talks" className="mt-20">
         <SectionHeading>Talks</SectionHeading>
-        <ul className="divide-y divide-neutral-200 dark:divide-neutral-800">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {talks.map((t) => (
-            <li key={t.repo}>
-              <a href={repoUrl(t.repo)} className="group flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-4">
-                <span className="flex-1 font-medium group-hover:text-accent">{t.title}</span>
-                {t.venue && <span className="text-sm text-neutral-600 dark:text-neutral-400">{t.venue}</span>}
-                <span className="w-12 font-mono text-xs text-neutral-500 sm:text-right">{t.year ?? ''}</span>
-              </a>
-            </li>
+            <TalkCard key={t.repo} talk={t} />
           ))}
-        </ul>
+        </div>
       </section>
 
       <footer className="mt-24 border-t border-neutral-200 pt-6 text-sm text-neutral-500 dark:border-neutral-800">
@@ -70,5 +64,12 @@ export default function App() {
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-6 text-xl font-semibold tracking-tight">{children}</h2>
+  return (
+    <div className="mb-8 flex items-center">
+      <h2 className="blueprint rounded-2xl px-5 py-2.5 text-2xl font-bold tracking-tight text-white [--grid:12px] sm:text-3xl">
+        {children}
+      </h2>
+      <span aria-hidden className="h-px flex-1 bg-accent/40" />
+    </div>
+  )
 }

@@ -1,4 +1,4 @@
-import { Archive, Bird, Bot, Braces, Clapperboard, Gauge, Grid3x3, ListChecks, ListFilter, MailSearch, Palette, Printer, Route, ShieldCheck, SquareTerminal, Stamp, Ticket, Waypoints, type LucideIcon } from 'lucide-react'
+import { Archive, Atom, Binary, Bird, Bot, Braces, Bug, Clapperboard, Coffee, Gauge, Gem, GitBranch, Grid3x3, InfinityIcon, ListChecks, ListFilter, Lock, MailSearch, OctagonPause, Package, Palette, Printer, Repeat, Route, ShieldCheck, SquareTerminal, Stamp, Ticket, Users, WandSparkles, Waypoints, Workflow, type LucideIcon } from 'lucide-react'
 import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
@@ -59,8 +59,8 @@ export type FeaturedProject = Project & { slug: string; icon: LucideIcon; page: 
 export type Talk = {
   title: string
   repo: string
+  icon: LucideIcon
   venue?: string
-  year?: number
 }
 
 export type BioSegment = string | { text: string; href: string }
@@ -326,21 +326,21 @@ export const more: Project[] = [
 ]
 
 export const talks: Talk[] = [
-  { title: 'Algorithms, not Al Gore’s Rhythm', repo: 'talk-algorithms', venue: 'The Iron Yard, Suncoast Developers Guild, Women Who Code Tampa' },
-  { title: 'Writing code that writes code', repo: 'talk-writing-code-that-writes-code' },
-  { title: 'Mathematical concepts of infinity', repo: 'talk-infinity' },
-  { title: 'State machines', repo: 'talk-state-machines' },
-  { title: 'The halting problem', repo: 'talk-halting-problem' },
-  { title: 'Debugging', repo: 'talk-debugging' },
-  { title: 'Security', repo: 'talk-security' },
-  { title: 'Ruby 2.5', repo: 'talk-Ruby-2.5' },
-  { title: 'webpack with Rails', repo: 'talk-webpacker-rails' },
-  { title: 'React with Rails', repo: 'talk-react-rails' },
-  { title: 'Enumerable', repo: 'talk-iron-yard-enumerable', venue: 'The Iron Yard', year: 2015 },
-  { title: 'Tampa Ruby meetup', repo: 'talk-tampa_rb_2012_04', venue: 'Tampa.rb', year: 2012 },
-  { title: 'JRuby', repo: 'talk-lunch20-jruby', venue: 'Lunch 2.0', year: 2009 },
-  { title: 'JRuby', repo: 'talk-day_of_ruby_jruby', venue: 'Day of Ruby', year: 2009 },
-  { title: 'Git', repo: 'talk-tampa_rb_2009_02', venue: 'Tampa.rb', year: 2009 },
+  { title: 'Algorithms, not Al Gore’s Rhythm', repo: 'talk-algorithms', icon: Binary, venue: 'The Iron Yard, Suncoast Developers Guild, Women Who Code Tampa' },
+  { title: 'Writing code that writes code', repo: 'talk-writing-code-that-writes-code', icon: WandSparkles },
+  { title: 'Mathematical concepts of infinity', repo: 'talk-infinity', icon: InfinityIcon },
+  { title: 'State machines', repo: 'talk-state-machines', icon: Workflow },
+  { title: 'The halting problem', repo: 'talk-halting-problem', icon: OctagonPause },
+  { title: 'Debugging', repo: 'talk-debugging', icon: Bug },
+  { title: 'Security', repo: 'talk-security', icon: Lock },
+  { title: 'Ruby 2.5', repo: 'talk-Ruby-2.5', icon: Gem },
+  { title: 'webpack with Rails', repo: 'talk-webpacker-rails', icon: Package },
+  { title: 'React with Rails', repo: 'talk-react-rails', icon: Atom },
+  { title: 'Enumerable', repo: 'talk-iron-yard-enumerable', icon: Repeat, venue: 'The Iron Yard' },
+  { title: 'Tampa Ruby meetup', repo: 'talk-tampa_rb_2012_04', icon: Users, venue: 'Tampa.rb' },
+  { title: 'JRuby', repo: 'talk-lunch20-jruby', icon: Coffee, venue: 'Lunch 2.0' },
+  { title: 'JRuby', repo: 'talk-day_of_ruby_jruby', icon: Coffee, venue: 'Day of Ruby' },
+  { title: 'Git', repo: 'talk-tampa_rb_2009_02', icon: GitBranch, venue: 'Tampa.rb' },
 ]
 
 export const repoUrl = github

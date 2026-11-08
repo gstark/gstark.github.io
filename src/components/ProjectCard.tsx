@@ -1,24 +1,53 @@
 import { LanguageLogo } from './LanguageLogo'
-import { projectPath, repoUrl, type FeaturedProject, type Project } from '../data'
+import type { LucideIcon } from 'lucide-react'
+import { projectPath, repoUrl, type FeaturedProject, type Project, type Talk } from '../data'
 
 export function ProjectCard({ project }: { project: FeaturedProject }) {
-  const Icon = project.icon
+  return (
+    <IconCard
+      href={projectPath(project.slug)}
+      icon={project.icon}
+      title={project.name}
+      meta={
+        <>
+          <LanguageLogo language={project.language} />
+          {project.language}
+        </>
+      }
+    >
+      {project.description}
+    </IconCard>
+  )
+}
+
+export function TalkCard({ talk }: { talk: Talk }) {
+  return (
+    <IconCard href={repoUrl(talk.repo)} icon={talk.icon} title={talk.title}>
+      {talk.venue}
+    </IconCard>
+  )
+}
+
+function IconCard({ href, icon: Icon, title, meta, children }: {
+  href: string
+  icon: LucideIcon
+  title: string
+  meta?: React.ReactNode
+  children?: React.ReactNode
+}) {
   return (
     <a
-      href={projectPath(project.slug)}
+      href={href}
       className="group flex flex-col gap-3 rounded-xl border border-neutral-200 px-6 pt-7 pb-6 transition-colors hover:border-accent/60 dark:border-neutral-800 dark:hover:border-accent/60"
     >
       <div className="blueprint mb-2 flex size-23 items-center justify-center rounded-3xl text-white">
         <Icon className="size-11.5" strokeWidth={1.75} aria-hidden />
       </div>
       <div className="flex items-baseline justify-between gap-3">
-        <h3 className="text-lg font-semibold group-hover:text-accent">{project.name}</h3>
-        <span className="flex items-center gap-1.5 font-mono text-xs text-neutral-700 dark:text-neutral-300">
-          <LanguageLogo language={project.language} />
-          {project.language}
-        </span>
+        <h3 className="text-lg font-semibold group-hover:text-accent">{title}</h3>
+        {meta && <span className="flex items-center gap-1.5 font-mono text-xs text-neutral-700 dark:text-neutral-300">{meta}</span>}
       </div>
-      <p className="text-sm leading-relaxed text-pretty text-neutral-600 dark:text-neutral-300">{project.description}</p>
+      {children && <p className="text-sm leading-relaxed text-pretty text-neutral-600 dark:text-neutral-300">{children}</p>}
     </a>
   )
 }
