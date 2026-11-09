@@ -6,10 +6,10 @@ export const whichdns: ProjectPageContent = {
     'whichdns tests the DNS servers your machine uses now against 125 public resolvers. It ranks them by reliability first and latency second, and it never changes your DNS settings.',
     'The idea and the measurements come from Steve Gibson\'s DNS Benchmark, which is a Windows program. whichdns runs natively on macOS and Linux, on both ARM and x86.',
   ],
-  status: 'Build from source',
-  note: 'A personal project with no packaged release yet. You build it with Zig 0.16. Zig 0.17 cannot build this version.',
+  status: 'v0.4.0',
+  note: 'A personal project. Homebrew installs a prebuilt binary for macOS or Linux. To build it yourself, you need Zig 0.16. Zig 0.17 cannot build this version.',
   license: 'MIT',
-  install: 'zig build -Doptimize=ReleaseSmall',
+  install: 'brew install gstark/tap/whichdns',
   media: [
     {
       kind: 'video',
@@ -56,15 +56,14 @@ whichdns --json | jq 'select(.type == "summary") | .fastest'`,
   ],
   steps: [
     {
-      title: 'Build',
-      body: '`sh scripts/install-zig.sh` installs a checksum-verified Zig 0.16 into the project if you need one.',
-      code: `git clone https://github.com/gstark/whichdns.git && cd whichdns
-zig build -Doptimize=ReleaseSmall`,
+      title: 'Install',
+      body: 'The formula installs the prebuilt binary for macOS or Linux, on ARM or x86. To build from source, clone the repository and run `zig build -Doptimize=ReleaseSmall`. `sh scripts/install-zig.sh` installs a checksum-verified Zig 0.16 into the project if you need one.',
+      code: 'brew install gstark/tap/whichdns',
     },
     {
       title: 'Run',
       body: 'A default run makes three passes and takes about three minutes.',
-      code: './zig-out/bin/whichdns --top 10',
+      code: 'whichdns --top 10',
     },
   ],
 }
