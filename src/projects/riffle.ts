@@ -9,8 +9,8 @@ export const riffle: ProjectPageContent = {
   ],
   status: 'Personal project, early',
   license: 'None yet',
-  note: 'A personal project that I built to back up my own mailbox. It runs in one AWS account, for one Google Workspace mailbox. Expect to read the OpenTofu files before you apply them.',
-  install: 'git clone https://github.com/gstark/riffle.git && cd riffle && npm install',
+  note: 'A personal project that I built to back up my own mailbox. It runs in one AWS account, for one Google Workspace mailbox. Homebrew installs the menu bar app, and the backend deploys from a clone. Expect to read the OpenTofu files before you apply them.',
+  install: 'brew install gstark/tap/riffle',
   example: {
     file: 'search.sh',
     code: `curl -X POST "$(cd infra && tofu output -raw search_url)search" \\
@@ -109,9 +109,9 @@ export const riffle: ProjectPageContent = {
     {
       title: 'Create the state bucket',
       body: 'Run this one time for each AWS account. It writes `infra/backend.hcl`. You need Node 24, OpenTofu 1.10, and AWS credentials.',
-      code: `cd infra/bootstrap
-tofu init
-tofu apply`,
+      code: `git clone https://github.com/gstark/riffle.git && cd riffle
+npm install
+(cd infra/bootstrap && tofu init && tofu apply)`,
     },
     {
       title: 'Apply the main stack',
