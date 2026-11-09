@@ -24,10 +24,16 @@ export function ProjectCard({ project }: { project: FeaturedProject }) {
 
 function HomebrewLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="mr-1.5 size-3.5 shrink-0" fill={`#${siHomebrew.hex}`} role="img" aria-label="Installs with Homebrew">
-      <title>Installs with Homebrew</title>
-      <path d={siHomebrew.path} />
-    </svg>
+    <span
+      title="Installs with Homebrew"
+      className="mr-2 flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-amber-900 dark:bg-amber-400/15 dark:text-amber-300"
+    >
+      <svg viewBox="0 0 24 24" className="size-3.5 shrink-0" fill="currentColor" aria-hidden>
+        <path d={siHomebrew.path} />
+      </svg>
+      brew
+      <span className="sr-only">: installs with Homebrew</span>
+    </span>
   )
 }
 
