@@ -1,5 +1,6 @@
 import { LanguageLogo } from './LanguageLogo'
 import type { LucideIcon } from 'lucide-react'
+import { siHomebrew } from 'simple-icons'
 import { projectPath, repoUrl, type FeaturedProject, type Project, type Talk } from '../data'
 
 export function ProjectCard({ project }: { project: FeaturedProject }) {
@@ -10,6 +11,7 @@ export function ProjectCard({ project }: { project: FeaturedProject }) {
       title={project.name}
       meta={
         <>
+          {project.page.install.startsWith('brew ') && <HomebrewLogo />}
           <LanguageLogo language={project.language} />
           {project.language}
         </>
@@ -17,6 +19,15 @@ export function ProjectCard({ project }: { project: FeaturedProject }) {
     >
       {project.description}
     </IconCard>
+  )
+}
+
+function HomebrewLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="mr-1.5 size-3.5 shrink-0" fill={`#${siHomebrew.hex}`} role="img" aria-label="Installs with Homebrew">
+      <title>Installs with Homebrew</title>
+      <path d={siHomebrew.path} />
+    </svg>
   )
 }
 
