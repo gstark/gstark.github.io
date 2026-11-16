@@ -97,3 +97,12 @@ A film frame is large as lossless WebP, so convert these two with loss instead o
 cwebp -q 88 -m 6 player.png -o public/media/reel/player.webp
 cwebp -q 85 -m 6 frames.png -o public/media/reel/frames.webp
 ```
+
+## Kallax box
+
+The workbench runs in the browser, so the script needs no setup. It builds a screw tray, finds a tray for a set of items, and draws the box. Each 3D view waits for OpenSCAD in the page, so the run takes about a minute. Pass a local build to capture before a deploy, for example `http://localhost:4173/kallax/`.
+
+```sh
+node capture/kallax.mjs
+capture/optimize.sh kallax
+```

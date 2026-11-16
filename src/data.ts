@@ -1,8 +1,9 @@
-import { Archive, Atom, Binary, Bird, Bot, Braces, Bug, Clapperboard, Coffee, Gauge, Gem, GitBranch, Grid3x3, InfinityIcon, ListChecks, ListFilter, Lock, MailSearch, OctagonPause, Package, Palette, Printer, Repeat, Route, ShieldCheck, SquareTerminal, Stamp, StickyNote, Users, WandSparkles, Waypoints, Workflow, type LucideIcon } from 'lucide-react'
+import { Archive, Atom, Binary, Bird, Bot, Boxes, Braces, Bug, Clapperboard, Coffee, Gauge, Gem, GitBranch, Grid3x3, InfinityIcon, ListChecks, ListFilter, Lock, MailSearch, OctagonPause, Package, Palette, Printer, Repeat, Route, ShieldCheck, SquareTerminal, Stamp, StickyNote, Users, WandSparkles, Waypoints, Workflow, type LucideIcon } from 'lucide-react'
 import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
 import { decentJob } from './projects/decent-job.ts'
+import { kallax } from './projects/kallax.ts'
 import { networkStatusFilters } from './projects/network-status-filters.ts'
 import { perch } from './projects/perch.ts'
 import { pietTicTacToe } from './projects/piet-tic-tac-toe.ts'
@@ -47,6 +48,8 @@ export type ProjectPageContent = {
   license: string
   install: string
   upstream?: { name: string; url: string }
+  // A version of the project that runs on the web, shown next to the GitHub link.
+  site?: { label: string; url: string }
   example?: CodeSample
   media?: Media[]
   highlights?: { heading: string; items: Highlight[] }
@@ -205,6 +208,16 @@ export const featured: FeaturedProject[] = [
     language: 'Python',
     description:
       'Python library that writes Bambu Studio project files: printer and filament presets, multi-color parts, and several plates, ready to slice.',
+  },
+  {
+    name: 'Kallax box',
+    repo: 'kallax',
+    slug: 'kallax',
+    page: kallax,
+    icon: Boxes,
+    language: 'TypeScript',
+    description:
+      'Printed storage for a KALLAX shelf cube. A browser workbench designs the box and its parts trays, finds the smallest tray for your items, and writes the Bambu Studio project.',
   },
   {
     name: 'posterize',

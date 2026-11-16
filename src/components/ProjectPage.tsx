@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Info, Play, X } from 'lucide-react'
+import { AppWindow, ArrowLeft, ArrowRight, Info, Play, X } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { siGithub } from 'simple-icons'
 import { featured, projectPath, repoUrl, type Feature, type FeaturedProject } from '../data'
@@ -38,6 +38,15 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
             </svg>
             View on GitHub
           </a>
+          {page.site && (
+            <a
+              href={page.site.url}
+              className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-sm font-semibold text-white ring-1 ring-white/30 transition-colors hover:bg-white/20"
+            >
+              <AppWindow className="size-4" aria-hidden />
+              {page.site.label}
+            </a>
+          )}
           <div className="flex min-w-0 items-center gap-2 rounded-lg bg-black/25 py-1 pr-1 pl-4 ring-1 ring-white/15">
             <code className="overflow-x-auto py-1.5 font-mono text-sm whitespace-nowrap">{page.install}</code>
             <CopyButton text={page.install} className="text-white/60 hover:bg-white/10 hover:text-white" />
@@ -69,6 +78,11 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
           {page.upstream && (
             <Fact label="Fork of">
               <a href={page.upstream.url} className="text-accent hover:underline">{page.upstream.name}</a>
+            </Fact>
+          )}
+          {page.site && (
+            <Fact label="Web app">
+              <a href={page.site.url} className="text-accent hover:underline">{page.site.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a>
             </Fact>
           )}
           <Fact label="Source">
