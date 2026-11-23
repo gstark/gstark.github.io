@@ -21,6 +21,21 @@ export function MediaGallery({ media }: { media: Media[] }) {
 
 export function MediaItem({ item }: { item: Media }) {
   const className = 'block h-auto w-full'
+  if (item.kind === 'video' && item.sound) {
+    return (
+      <video
+        src={item.src}
+        poster={item.poster}
+        width={item.width}
+        height={item.height}
+        aria-label={item.alt}
+        className={className}
+        controls
+        playsInline
+        preload="none"
+      />
+    )
+  }
   if (item.kind === 'video') {
     return (
       <video

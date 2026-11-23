@@ -1,9 +1,10 @@
-import { Archive, Atom, Binary, Bird, Bot, Boxes, Braces, Bug, Clapperboard, Coffee, Gauge, Gem, GitBranch, Grid3x3, InfinityIcon, ListChecks, ListFilter, Lock, MailSearch, OctagonPause, Package, Palette, Printer, Repeat, Route, ShieldCheck, SquareTerminal, Stamp, StickyNote, Users, WandSparkles, Waypoints, Workflow, type LucideIcon } from 'lucide-react'
+import { Archive, Atom, Binary, Bird, Bot, Boxes, Braces, Bug, Camera, Clapperboard, Coffee, Gauge, Gem, GitBranch, Grid3x3, InfinityIcon, ListChecks, ListFilter, Lock, MailSearch, OctagonPause, Package, Palette, Printer, Repeat, Route, ShieldCheck, SquareTerminal, Stamp, StickyNote, Users, WandSparkles, Waypoints, Workflow, type LucideIcon } from 'lucide-react'
 import { aStar } from './projects/a-star.ts'
 import { agentManager } from './projects/agent-manager.ts'
 import { bambu3mf } from './projects/bambu3mf.ts'
 import { decentJob } from './projects/decent-job.ts'
 import { kallax } from './projects/kallax.ts'
+import { lookout } from './projects/lookout.ts'
 import { networkStatusFilters } from './projects/network-status-filters.ts'
 import { perch } from './projects/perch.ts'
 import { pietTicTacToe } from './projects/piet-tic-tac-toe.ts'
@@ -32,10 +33,11 @@ export type CodeSample = { file: string; code: string }
 // video is the path of an mp4 that shows the feature.
 export type Feature = { title: string; body: string; group?: string; prs?: number[]; video?: string }
 
-// src is a path under public/media. Videos are short, muted loops.
+// src is a path under public/media. Videos are short, muted loops, unless sound is set:
+// a video with sound waits for the visitor to press play.
 export type Media =
   | { kind: 'image'; src: string; alt: string; width: number; height: number }
-  | { kind: 'video'; src: string; poster: string; alt: string; width: number; height: number }
+  | { kind: 'video'; src: string; poster: string; alt: string; width: number; height: number; sound?: boolean }
 
 // A feature large enough to show with its own screenshot.
 export type Highlight = { title: string; body: string; media: Media }
@@ -89,6 +91,16 @@ export const profile = {
 }
 
 export const featured: FeaturedProject[] = [
+  {
+    name: 'Lookout',
+    repo: 'lookout',
+    slug: 'lookout',
+    page: lookout,
+    icon: Camera,
+    language: 'Kotlin',
+    description:
+      'Android app that turns a spare phone into a camera for coding agents. Claude Code connects over MCP to look, record, read displays, and ask the person at the desk for help.',
+  },
   {
     name: 'decent_job',
     repo: 'decent_job',
