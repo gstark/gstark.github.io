@@ -5,18 +5,18 @@ export const lookout: ProjectPageContent = {
   summary: [
     'A coding agent can build and flash firmware, but it cannot see the board. Lookout fixes that. The phone runs an MCP server on the local network, and Claude Code connects to it. Scripts can use the same features through a plain HTTP API.',
     'The agent can take a quick look, wait for the view to change, record 60 fps video and read an LED blink code from a brightness trace, or read the numbers on a meter display with on-device OCR. It can also talk to the person at the desk: show a question on the phone, ask them to center a part, or draw arrows on the preview to show where to act.',
-    'In the film, Claude Code asks the person to center the STAT LED, records 6 seconds at 60 fps, reads the blink code, and finds the fault.',
+    'In the film, the phone joins a Tailscale network, one command installs the Lookout skill, and the agent pairs with the phone after the person checks a code. Then Claude Code asks the person to center the STAT LED, records 6 seconds at 60 fps, reads the blink code, and finds the fault.',
   ],
   status: 'Personal project, in use',
   license: 'MIT',
-  note: 'A personal project. You build the app from source and install it with adb. It needs Android 10 or later and a phone on the same network as your computer. Requests need a bearer token, and the server answers only on the local network.',
+  note: 'A personal project. You build the app from source and install it with adb. It needs Android 10 or later and a phone on the same network as your computer, or on the same Tailscale network. Requests need a bearer token. The server answers on the local network and, when you turn it on, on your tailnet.',
   install: 'git clone https://github.com/gstark/lookout',
   film: {
     kind: 'video',
     sound: true,
     src: '/media/lookout/demo.mp4',
     poster: '/media/lookout/demo-poster.webp',
-    alt: 'An 84 second narrated film. Claude Code looks at a circuit board through a phone on an arm, asks the person to center the STAT LED, records it at 60 fps, and reads the blink code to find the fault.',
+    alt: 'A 104 second narrated film. The phone joins a Tailscale network, and Claude Code installs the Lookout skill, finds the phone, and pairs with it after the person checks a code. Then it looks at a circuit board through the phone, asks the person to center the STAT LED, records it at 60 fps, and reads the blink code to find the fault.',
     width: 1920,
     height: 1080,
   },
@@ -98,6 +98,11 @@ cd lookout
     {
       title: 'Connect Claude Code',
       body: 'Tap Setup on the phone, copy the `claude mcp add` command, and run it on your computer. Give the phone a DHCP reservation on your router, so its address does not change.',
+    },
+    {
+      title: 'Or pair an agent on another machine',
+      body: 'Install Tailscale on the phone, then turn on Allow Tailscale in Setup. Install the skill where the agent runs. The agent finds the phone and asks to pair. Compare the code that the agent shows with the code on the phone, then tap Allow.',
+      code: 'npx skills add gstark/lookout',
     },
   ],
 }
