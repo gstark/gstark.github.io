@@ -56,6 +56,12 @@ export function ProjectPage({ project }: { project: FeaturedProject }) {
 
       <section className="mt-14 grid gap-10 sm:grid-cols-[1fr_13rem]">
         <div className="space-y-4">
+          {page.film && (
+            <figure className="mb-8 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800">
+              <MediaItem item={page.film} />
+              <figcaption className="sr-only">{page.film.alt}</figcaption>
+            </figure>
+          )}
           {page.summary.map((paragraph) => (
             <p key={paragraph} className="text-lg leading-relaxed text-pretty text-neutral-700 dark:text-neutral-300">
               <Inline text={paragraph} />

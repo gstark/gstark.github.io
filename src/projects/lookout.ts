@@ -11,16 +11,16 @@ export const lookout: ProjectPageContent = {
   license: 'MIT',
   note: 'A personal project. You build the app from source and install it with adb. It needs Android 10 or later and a phone on the same network as your computer. Requests need a bearer token, and the server answers only on the local network.',
   install: 'git clone https://github.com/gstark/lookout',
+  film: {
+    kind: 'video',
+    sound: true,
+    src: '/media/lookout/demo.mp4',
+    poster: '/media/lookout/demo-poster.webp',
+    alt: 'An 84 second narrated film. Claude Code looks at a circuit board through a phone on an arm, asks the person to center the STAT LED, records it at 60 fps, and reads the blink code to find the fault.',
+    width: 1920,
+    height: 1080,
+  },
   media: [
-    {
-      kind: 'video',
-      sound: true,
-      src: '/media/lookout/demo.mp4',
-      poster: '/media/lookout/demo-poster.webp',
-      alt: 'An 84 second narrated film. Claude Code looks at a circuit board through a phone on an arm, asks the person to center the STAT LED, records it at 60 fps, and reads the blink code to find the fault.',
-      width: 1920,
-      height: 1080,
-    },
     {
       kind: 'image',
       src: '/media/lookout/phone-screens.webp',

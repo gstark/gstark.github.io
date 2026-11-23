@@ -53,6 +53,8 @@ export type ProjectPageContent = {
   // A version of the project that runs on the web, shown next to the GitHub link.
   site?: { label: string; url: string }
   example?: CodeSample
+  // A video with sound, shown above the summary.
+  film?: Media
   media?: Media[]
   highlights?: { heading: string; items: Highlight[] }
   features: Feature[]
