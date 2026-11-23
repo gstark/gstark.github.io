@@ -101,7 +101,7 @@ export const featured: FeaturedProject[] = [
     icon: Camera,
     language: 'Kotlin',
     description:
-      'Android app that turns a spare phone into a camera for coding agents. Claude Code connects over MCP to look, record, read displays, and ask the person at the desk for help.',
+      'Android app that turns a spare phone into a camera for coding agents. Any agent that supports MCP can look, record, read displays, and ask the person at the desk for help.',
   },
   {
     name: 'decent_job',

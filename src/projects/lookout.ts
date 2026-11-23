@@ -3,9 +3,9 @@ import type { ProjectPageContent } from '../data.ts'
 export const lookout: ProjectPageContent = {
   tagline: 'Turn a spare Android phone into a camera that coding agents can see through.',
   summary: [
-    'A coding agent can build and flash firmware, but it cannot see the board. Lookout fixes that. The phone runs an MCP server on the local network, and Claude Code connects to it. Scripts can use the same features through a plain HTTP API.',
+    'A coding agent can build and flash firmware, but it cannot see the board. Lookout fixes that. The phone runs an MCP server on the local network, and it works with any agent that supports MCP. Scripts can use the same features through a plain HTTP API.',
     'The agent can take a quick look, wait for the view to change, record 60 fps video and read an LED blink code from a brightness trace, or read the numbers on a meter display with on-device OCR. It can also talk to the person at the desk: show a question on the phone, ask them to center a part, or draw arrows on the preview to show where to act.',
-    'In the film, the phone joins a Tailscale network, one command installs the Lookout skill, and the agent pairs with the phone after the person checks a code. Then Claude Code asks the person to center the STAT LED, records 6 seconds at 60 fps, reads the blink code, and finds the fault.',
+    'In the film, the phone joins a Tailscale network, one command installs the Lookout skill, and the agent pairs with the phone after the person checks a code. Then the agent asks the person to center the STAT LED, records 6 seconds at 60 fps, reads the blink code, and finds the fault.',
   ],
   status: 'Personal project, in use',
   license: 'MIT',
@@ -16,7 +16,7 @@ export const lookout: ProjectPageContent = {
     sound: true,
     src: '/media/lookout/demo.mp4',
     poster: '/media/lookout/demo-poster.webp',
-    alt: 'A 104 second narrated film. The phone joins a Tailscale network, and Claude Code installs the Lookout skill, finds the phone, and pairs with it after the person checks a code. Then it looks at a circuit board through the phone, asks the person to center the STAT LED, records it at 60 fps, and reads the blink code to find the fault.',
+    alt: 'A 104 second narrated film. The phone joins a Tailscale network, and a coding agent installs the Lookout skill, finds the phone, and pairs with it after the person checks a code. Then it looks at a circuit board through the phone, asks the person to center the STAT LED, records it at 60 fps, and reads the blink code to find the fault.',
     width: 1920,
     height: 1080,
   },
@@ -24,8 +24,8 @@ export const lookout: ProjectPageContent = {
     {
       kind: 'image',
       src: '/media/lookout/phone-screens.webp',
-      alt: 'Five phone screens: the live preview with a named region and the activity feed, a guide that shows the shot the agent wants, a recording countdown, a full-screen question, and Setup with a QR code and the claude mcp add command.',
-      width: 2480,
+      alt: 'Four phone screens: the live preview with a named region and the activity feed, a guide that shows the shot the agent wants, a recording countdown, and a full-screen question.',
+      width: 1984,
       height: 1019,
     },
     {
@@ -96,13 +96,13 @@ cd lookout
       body: 'Allow the camera. Turn off battery optimization when the checklist asks.',
     },
     {
-      title: 'Connect Claude Code',
-      body: 'Tap Setup on the phone, copy the `claude mcp add` command, and run it on your computer. Give the phone a DHCP reservation on your router, so its address does not change.',
+      title: 'Connect an agent',
+      body: 'Lookout works with any agent that supports MCP. Install the skill where the agent runs, then ask the agent to find the phone and pair. Compare the code that the agent shows with the code on the phone, then tap Allow.',
+      code: 'npx skills add gstark/lookout',
     },
     {
-      title: 'Or pair an agent on another machine',
-      body: 'Install Tailscale on the phone, then turn on Allow Tailscale in Setup. Install the skill where the agent runs. The agent finds the phone and asks to pair. Compare the code that the agent shows with the code on the phone, then tap Allow.',
-      code: 'npx skills add gstark/lookout',
+      title: 'Reach the phone from another machine',
+      body: 'Install Tailscale on the phone, then turn on Allow Tailscale in Setup. An agent on any machine in your tailnet can then find the phone and pair.',
     },
   ],
 }
